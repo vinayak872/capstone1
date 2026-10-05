@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: success-rate-analysis
+  namespace: cloud05
+spec:
+  metrics:
+    - name: success-rate
+      interval: 5s
+      successCondition: result[0] >= 85
+      failureLimit: 1
+      provider:
+        prometheus:
+          address: http://prometheus-server.monitoring.svc.cluster.local:9090
+          query: |
+            (
+              sum(rate(http_requests_total{status_code!~"5..", namespace="cloud05"}[1m]))
+              /
+              (sum(rate(http_requests_total{namespace="cloud05"}[1m])) > 0)
+            ) * 100 or vector(100)
+    - name: error-rate
+      interval: 5s
+      successCondition: result[0] <= 15
+      failureLimit: 1
+      provider:
+        prometheus:
+          address: http://prometheus-server.monitoring.svc.cluster.local:9090
+          query: |
+            (
+              sum(rate(http_requests_total{status_code=~"5..", namespace="cloud05"}[1m]))
+              /
+              (sum(rate(http_requests_total{namespace="cloud05"}[1m])) > 0)
+            ) * 100 or vector(0)
