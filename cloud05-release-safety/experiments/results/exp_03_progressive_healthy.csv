@@ -1,0 +1,2 @@
+experiment_id,timestamp,git_commit,deployment_mode,old_version,new_version,failure_mode,failure_rate,total_requests,error_count,error_rate,p50_latency,p95_latency,p99_latency,detection_time_ms,rollback_time_ms,recovery_time_ms,rollback_success,final_version,result
+exp_03_progressive_healthy,2026-10-05T19:23:12.496248+00:00,57f82b36206b65e83e91c4e2766632b5c36b614a,progressive,1.0.0,2.0.0,none,0.0,126,0,0.0,5.07,7.69,10.49,0.0,0.0,0.0,False,1.0.0,SUCCESS

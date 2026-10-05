@@ -1,0 +1,2 @@
+NAME          SYNC STATUS   HEALTH STATUS   REVISION   PROJECT
+cloud05-app   Unknown       Healthy         main       default

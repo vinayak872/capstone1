@@ -1,0 +1,5 @@
+cloud05-demo:1.0.0                                                                                                         776a99274e86        228MB         55.7MB        
+cloud05-demo:2.0.0                                                                                                         e7eb0922eb74        228MB         55.7MB        
+cloud05-demo:3.0.0                                                                                                         a574e9411110        228MB         55.7MB        
+docker/desktop-cloud-provider-kind:v0.6.0                                                                                  46d51b990e97        587MB          156MB   U    
+kindest/node:v1.36.1                                                                                                       3489c7674813       1.27GB          350MB   U    

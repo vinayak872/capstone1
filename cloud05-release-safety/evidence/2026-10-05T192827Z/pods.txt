@@ -1,0 +1,6 @@
+NAME                                READY   STATUS    RESTARTS   AGE   IP             NODE                    NOMINATED NODE   READINESS GATES
+cloud05-rollout-8cd557ccf-4bghl     1/1     Running   0          45s   10.244.0.121   cloud05-control-plane   <none>           <none>
+cloud05-rollout-8cd557ccf-6vgmk     1/1     Running   0          45s   10.244.0.122   cloud05-control-plane   <none>           <none>
+cloud05-rollout-8cd557ccf-jvvmb     1/1     Running   0          45s   10.244.0.123   cloud05-control-plane   <none>           <none>
+cloud05-rollout-8cd557ccf-pxmpj     1/1     Running   0          13s   10.244.0.127   cloud05-control-plane   <none>           <none>
+local-git-server-5cf5f796ff-7vgpl   1/1     Running   0          18m   10.244.0.17    cloud05-control-plane   <none>           <none>

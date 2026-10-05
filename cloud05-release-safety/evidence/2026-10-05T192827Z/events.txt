@@ -1,0 +1,914 @@
+LAST SEEN   TYPE      REASON                   OBJECT                                       MESSAGE
+18m         Normal    ScalingReplicaSet        deployment/local-git-server                  Scaled up replica set local-git-server-77f4bb88c7 from 0 to 1
+18m         Normal    Scheduled                pod/local-git-server-77f4bb88c7-cb2gb        Successfully assigned cloud05/local-git-server-77f4bb88c7-cb2gb to cloud05-control-plane
+18m         Normal    Pulling                  pod/local-git-server-77f4bb88c7-cb2gb        Pulling image "alpine/git:v2.45.2"
+18m         Normal    SuccessfulCreate         replicaset/local-git-server-77f4bb88c7       Created pod: local-git-server-77f4bb88c7-cb2gb
+18m         Normal    Pulled                   pod/local-git-server-77f4bb88c7-cb2gb        Successfully pulled image "alpine/git:v2.45.2" in 15.303s (15.303s including waiting). Image size: 34225902 bytes.
+18m         Normal    Created                  pod/local-git-server-77f4bb88c7-cb2gb        Container created
+18m         Normal    Started                  pod/local-git-server-77f4bb88c7-cb2gb        Container started
+18m         Normal    Pulled                   pod/local-git-server-77f4bb88c7-cb2gb        Container image "alpine/git:v2.45.2" already present on machine and can be accessed by the pod
+18m         Warning   BackOff                  pod/local-git-server-77f4bb88c7-cb2gb        Back-off restarting failed container git-http in pod local-git-server-77f4bb88c7-cb2gb_cloud05(43226ccb-3eb6-4769-a471-3bf72ad8936d)
+18m         Normal    SuccessfulCreate         replicaset/local-git-server-655db48d99       Created pod: local-git-server-655db48d99-fjpg6
+18m         Normal    ScalingReplicaSet        deployment/local-git-server                  Scaled down replica set local-git-server-77f4bb88c7 from 1 to 0
+18m         Normal    SuccessfulDelete         replicaset/local-git-server-77f4bb88c7       Deleted pod: local-git-server-77f4bb88c7-cb2gb
+18m         Normal    ScalingReplicaSet        deployment/local-git-server                  Scaled up replica set local-git-server-5cf5f796ff from 0 to 1
+18m         Normal    ScalingReplicaSet        deployment/local-git-server                  Scaled up replica set local-git-server-655db48d99 from 0 to 1
+18m         Normal    SuccessfulCreate         replicaset/local-git-server-5cf5f796ff       Created pod: local-git-server-5cf5f796ff-7vgpl
+18m         Normal    Scheduled                pod/local-git-server-5cf5f796ff-7vgpl        Successfully assigned cloud05/local-git-server-5cf5f796ff-7vgpl to cloud05-control-plane
+18m         Normal    Scheduled                pod/local-git-server-655db48d99-fjpg6        Successfully assigned cloud05/local-git-server-655db48d99-fjpg6 to cloud05-control-plane
+18m         Normal    Pulled                   pod/local-git-server-655db48d99-fjpg6        Container image "alpine/git:v2.45.2" already present on machine and can be accessed by the pod
+18m         Normal    Pulled                   pod/local-git-server-5cf5f796ff-7vgpl        Container image "alpine/git:v2.45.2" already present on machine and can be accessed by the pod
+18m         Normal    Created                  pod/local-git-server-5cf5f796ff-7vgpl        Container created
+18m         Normal    Killing                  pod/local-git-server-655db48d99-fjpg6        Stopping container git-http
+18m         Normal    SuccessfulDelete         replicaset/local-git-server-655db48d99       Deleted pod: local-git-server-655db48d99-fjpg6
+18m         Normal    Created                  pod/local-git-server-655db48d99-fjpg6        Container created
+18m         Normal    Started                  pod/local-git-server-655db48d99-fjpg6        Container started
+18m         Normal    ScalingReplicaSet        deployment/local-git-server                  Scaled down replica set local-git-server-655db48d99 from 1 to 0
+18m         Normal    Started                  pod/local-git-server-5cf5f796ff-7vgpl        Container started
+17m         Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-t5fh9
+17m         Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled up replica set cloud05-demo-7fcd87c8cc from 0 to 3
+17m         Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-t8qtr
+17m         Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-n96nl
+17m         Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-t8qtr            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-t8qtr to cloud05-control-plane
+17m         Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-t5fh9            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-t5fh9 to cloud05-control-plane
+17m         Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-n96nl            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-n96nl to cloud05-control-plane
+17m         Normal    Created                  pod/cloud05-demo-7fcd87c8cc-t5fh9            Container created
+17m         Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-t5fh9            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+17m         Normal    Started                  pod/cloud05-demo-7fcd87c8cc-t5fh9            Container started
+17m         Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-t8qtr            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+17m         Normal    Created                  pod/cloud05-demo-7fcd87c8cc-t8qtr            Container created
+17m         Normal    Started                  pod/cloud05-demo-7fcd87c8cc-t8qtr            Container started
+17m         Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-n96nl            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+17m         Normal    Created                  pod/cloud05-demo-7fcd87c8cc-n96nl            Container created
+17m         Normal    Started                  pod/cloud05-demo-7fcd87c8cc-n96nl            Container started
+16m         Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-t8qtr
+16m         Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled down replica set cloud05-demo-7fcd87c8cc from 3 to 1
+16m         Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-n96nl
+16m         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-n96nl            Stopping container demo-service
+16m         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-t8qtr            Stopping container demo-service
+16m         Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-qskqm
+16m         Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-qskqm            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-qskqm to cloud05-control-plane
+16m         Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-j795g            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+16m         Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-j795g
+16m         Normal    Created                  pod/cloud05-demo-7fcd87c8cc-j795g            Container created
+16m         Normal    Started                  pod/cloud05-demo-7fcd87c8cc-j795g            Container started
+16m         Normal    Created                  pod/cloud05-demo-7fcd87c8cc-qskqm            Container created
+16m         Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-j795g            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-j795g to cloud05-control-plane
+16m         Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-qskqm            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+16m         Normal    Started                  pod/cloud05-demo-7fcd87c8cc-qskqm            Container started
+16m         Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled up replica set cloud05-demo-7fcd87c8cc from 1 to 3
+16m         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-qskqm            Stopping container demo-service
+16m         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-j795g            Stopping container demo-service
+16m         Warning   Unhealthy                pod/cloud05-demo-7fcd87c8cc-j795g            Readiness probe failed: Get "http://10.244.0.22:8080/ready": dial tcp 10.244.0.22:8080: connect: connection refused
+16m         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-t5fh9            Stopping container demo-service
+16m         Warning   Unhealthy                pod/cloud05-demo-7fcd87c8cc-t5fh9            Readiness probe failed: Get "http://10.244.0.19:8080/ready": dial tcp 10.244.0.19:8080: connect: connection refused
+16m         Warning   Unhealthy                pod/cloud05-demo-7fcd87c8cc-qskqm            Readiness probe failed: Get "http://10.244.0.21:8080/ready": dial tcp 10.244.0.21:8080: connect: connection refused
+16m         Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-cq9z7            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-cq9z7 to cloud05-control-plane
+16m         Normal    RolloutAddedToInformer   rollout/cloud05-rollout                      Rollout resource added to informer: cloud05/cloud05-rollout
+16m         Normal    Created                  pod/cloud05-demo-7fcd87c8cc-cq9z7            Container created
+16m         Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-62xrj            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-62xrj to cloud05-control-plane
+16m         Normal    Started                  pod/cloud05-demo-7fcd87c8cc-8qxb8            Container started
+16m         Normal    Created                  pod/cloud05-demo-7fcd87c8cc-62xrj            Container created
+16m         Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-62xrj            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+16m         Normal    Started                  pod/cloud05-demo-7fcd87c8cc-cq9z7            Container started
+16m         Normal    Started                  pod/cloud05-demo-7fcd87c8cc-62xrj            Container started
+16m         Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-cq9z7
+16m         Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled up replica set cloud05-demo-7fcd87c8cc from 0 to 3
+16m         Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-cq9z7            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+16m         Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-8qxb8            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-8qxb8 to cloud05-control-plane
+16m         Normal    Created                  pod/cloud05-demo-7fcd87c8cc-8qxb8            Container created
+16m         Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-8qxb8            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+16m         Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-8qxb8
+16m         Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-62xrj
+16m         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-8qxb8            Stopping container demo-service
+16m         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-cq9z7            Stopping container demo-service
+16m         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-62xrj            Stopping container demo-service
+15m         Normal    RolloutUpdated           rollout/cloud05-rollout                      Rollout updated to revision 1
+15m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-rntfl
+15m         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-drkjq          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-drkjq to cloud05-control-plane
+15m         Normal    RolloutCompleted         rollout/cloud05-rollout                      Rollout completed update to revision 1 (8cd557ccf): Initial deploy
+15m         Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled up ReplicaSet cloud05-rollout-8cd557ccf (revision 1) from 0 to 4
+15m         Normal    RolloutNotCompleted      rollout/cloud05-rollout                      Rollout not completed, started update to revision 1 (8cd557ccf)
+15m         Normal    NewReplicaSetCreated     rollout/cloud05-rollout                      Created ReplicaSet cloud05-rollout-8cd557ccf (revision 1)
+15m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-drkjq
+15m         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-vjmf8          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-vjmf8 to cloud05-control-plane
+15m         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-rntfl          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-rntfl to cloud05-control-plane
+15m         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-5xf2b          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-5xf2b to cloud05-control-plane
+15m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-5xf2b
+15m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-vjmf8
+15m         Normal    Created                  pod/cloud05-rollout-8cd557ccf-vjmf8          Container created
+15m         Normal    Started                  pod/cloud05-rollout-8cd557ccf-vjmf8          Container started
+15m         Normal    Started                  pod/cloud05-rollout-8cd557ccf-drkjq          Container started
+15m         Normal    Created                  pod/cloud05-rollout-8cd557ccf-rntfl          Container created
+15m         Normal    Started                  pod/cloud05-rollout-8cd557ccf-rntfl          Container started
+15m         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-5xf2b          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+15m         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-vjmf8          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+15m         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-rntfl          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+15m         Normal    Created                  pod/cloud05-rollout-8cd557ccf-5xf2b          Container created
+15m         Normal    Started                  pod/cloud05-rollout-8cd557ccf-5xf2b          Container started
+15m         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-drkjq          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+15m         Normal    Created                  pod/cloud05-rollout-8cd557ccf-drkjq          Container created
+15m         Normal    SwitchService            rollout/cloud05-rollout                      Switched selector for service 'cloud05-canary-service' from '' to '8cd557ccf'
+15m         Normal    SwitchService            rollout/cloud05-rollout                      Switched selector for service 'cloud05-service' from '' to '8cd557ccf'
+15m         Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled up ReplicaSet cloud05-rollout-8cd557ccf (revision 1) from 0 to 4
+15m         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-957r4          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-957r4 to cloud05-control-plane
+15m         Normal    RolloutCompleted         rollout/cloud05-rollout                      Rollout completed update to revision 1 (8cd557ccf): Initial deploy
+15m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-957r4
+15m         Normal    RolloutNotCompleted      rollout/cloud05-rollout                      Rollout not completed, started update to revision 1 (8cd557ccf)
+15m         Normal    NewReplicaSetCreated     rollout/cloud05-rollout                      Created ReplicaSet cloud05-rollout-8cd557ccf (revision 1)
+15m         Normal    RolloutUpdated           rollout/cloud05-rollout                      Rollout updated to revision 1
+15m         Normal    RolloutAddedToInformer   rollout/cloud05-rollout                      Rollout resource added to informer: cloud05/cloud05-rollout
+15m         Normal    RolloutDeleted           rollout/cloud05-rollout                      Rollout cloud05-rollout/cloud05 is deleted.
+15m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-xbz4b
+15m         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-cszlw          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-cszlw to cloud05-control-plane
+15m         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-6fqv8          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+15m         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-6fqv8          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-6fqv8 to cloud05-control-plane
+15m         Normal    Killing                  pod/cloud05-rollout-8cd557ccf-5xf2b          Stopping container demo-service
+15m         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-xbz4b          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-xbz4b to cloud05-control-plane
+15m         Normal    Killing                  pod/cloud05-rollout-8cd557ccf-vjmf8          Stopping container demo-service
+15m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-6fqv8
+15m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-cszlw
+15m         Normal    Killing                  pod/cloud05-rollout-8cd557ccf-drkjq          Stopping container demo-service
+15m         Normal    Killing                  pod/cloud05-rollout-8cd557ccf-rntfl          Stopping container demo-service
+15m         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-957r4          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+15m         Normal    Created                  pod/cloud05-rollout-8cd557ccf-6fqv8          Container created
+15m         Normal    Started                  pod/cloud05-rollout-8cd557ccf-cszlw          Container started
+15m         Normal    Created                  pod/cloud05-rollout-8cd557ccf-cszlw          Container created
+15m         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-cszlw          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+15m         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-xbz4b          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+15m         Normal    Created                  pod/cloud05-rollout-8cd557ccf-xbz4b          Container created
+15m         Normal    Started                  pod/cloud05-rollout-8cd557ccf-xbz4b          Container started
+15m         Normal    Started                  pod/cloud05-rollout-8cd557ccf-957r4          Container started
+15m         Normal    Created                  pod/cloud05-rollout-8cd557ccf-957r4          Container created
+15m         Normal    Started                  pod/cloud05-rollout-8cd557ccf-6fqv8          Container started
+15m         Normal    SwitchService            rollout/cloud05-rollout                      Switched selector for service 'cloud05-canary-service' from '' to '8cd557ccf'
+15m         Normal    SwitchService            rollout/cloud05-rollout                      Switched selector for service 'cloud05-service' from '' to '8cd557ccf'
+15m         Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-n82fv            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-n82fv to cloud05-control-plane
+15m         Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-hchc9            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-hchc9 to cloud05-control-plane
+15m         Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled up replica set cloud05-demo-7fcd87c8cc from 0 to 3
+15m         Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-lzjdc            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-lzjdc to cloud05-control-plane
+15m         Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-hchc9
+15m         Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-lzjdc
+15m         Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-n82fv
+15m         Normal    Created                  pod/cloud05-demo-7fcd87c8cc-n82fv            Container created
+15m         Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-hchc9            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+15m         Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-n82fv            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+15m         Normal    Started                  pod/cloud05-demo-7fcd87c8cc-n82fv            Container started
+15m         Normal    Started                  pod/cloud05-demo-7fcd87c8cc-lzjdc            Container started
+15m         Normal    Created                  pod/cloud05-demo-7fcd87c8cc-lzjdc            Container created
+15m         Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-lzjdc            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+15m         Normal    Created                  pod/cloud05-demo-7fcd87c8cc-hchc9            Container created
+15m         Normal    Started                  pod/cloud05-demo-7fcd87c8cc-hchc9            Container started
+15m         Normal    Killing                  pod/cloud05-rollout-8cd557ccf-6fqv8          Stopping container demo-service
+15m         Normal    Created                  pod/cloud05-rollout-7b956d98b8-r4jdw         Container created
+15m         Normal    Started                  pod/cloud05-rollout-7b956d98b8-r4jdw         Container started
+15m         Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-r4jdw         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+15m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-8cd557ccf         Deleted pod: cloud05-rollout-8cd557ccf-6fqv8
+15m         Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-r4jdw         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-r4jdw to cloud05-control-plane
+15m         Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled up ReplicaSet cloud05-rollout-7b956d98b8 (revision 2) from 0 to 1
+15m         Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled down ReplicaSet cloud05-rollout-8cd557ccf (revision 1) from 4 to 3
+15m         Normal    RolloutNotCompleted      rollout/cloud05-rollout                      Rollout not completed, started update to revision 2 (7b956d98b8)
+15m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-7b956d98b8        Created pod: cloud05-rollout-7b956d98b8-r4jdw
+15m         Normal    NewReplicaSetCreated     rollout/cloud05-rollout                      Created ReplicaSet cloud05-rollout-7b956d98b8 (revision 2)
+15m         Normal    RolloutUpdated           rollout/cloud05-rollout                      Rollout updated to revision 2
+15m         Normal    RolloutStepCompleted     rollout/cloud05-rollout                      Rollout step 1/7 completed (setWeight: 25)
+14m         Normal    RolloutPaused            rollout/cloud05-rollout                      Rollout is paused (CanaryPauseStep)
+15m         Normal    SwitchService            rollout/cloud05-rollout                      Switched selector for service 'cloud05-canary-service' from '8cd557ccf' to '7b956d98b8'
+15m         Normal    AnalysisRunRunning       rollout/cloud05-rollout                      Step Analysis Run 'cloud05-rollout-7b956d98b8-2-2' Status New: 'Running' Previous: ''
+15m         Normal    RolloutResumed           rollout/cloud05-rollout                      Rollout is resumed
+15m         Normal    RolloutStepCompleted     rollout/cloud05-rollout                      Rollout step 2/7 completed (pause: 6s)
+15m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-7b956d98b8-2-2   Metric 'error-rate' Completed. Result: Successful
+15m         Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled up ReplicaSet cloud05-rollout-7b956d98b8 (revision 2) from 1 to 2
+15m         Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-x86ct         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-x86ct to cloud05-control-plane
+15m         Normal    Created                  pod/cloud05-rollout-7b956d98b8-x86ct         Container created
+15m         Normal    AnalysisRunSuccessful    rollout/cloud05-rollout                      Step Analysis Run 'cloud05-rollout-7b956d98b8-2-2' Status New: 'Successful' Previous: 'Running'
+15m         Normal    RolloutStepCompleted     rollout/cloud05-rollout                      Rollout step 3/7 completed (analysis)
+15m         Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled down ReplicaSet cloud05-rollout-8cd557ccf (revision 1) from 3 to 2
+15m         Normal    Killing                  pod/cloud05-rollout-8cd557ccf-cszlw          Stopping container demo-service
+15m         Normal    AnalysisRunSuccessful    analysisrun/cloud05-rollout-7b956d98b8-2-2   Analysis Completed. Result: Successful
+15m         Normal    Started                  pod/cloud05-rollout-7b956d98b8-x86ct         Container started
+15m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-7b956d98b8        Created pod: cloud05-rollout-7b956d98b8-x86ct
+15m         Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-x86ct         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+15m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-7b956d98b8-2-2   Metric 'success-rate' Completed. Result: Successful
+15m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-8cd557ccf         Deleted pod: cloud05-rollout-8cd557ccf-cszlw
+14m         Normal    RolloutStepCompleted     rollout/cloud05-rollout                      Rollout step 4/7 completed (setWeight: 50)
+14m         Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-km54s         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-km54s to cloud05-control-plane
+14m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-7b956d98b8        Created pod: cloud05-rollout-7b956d98b8-9pw54
+14m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-7b956d98b8-2-5   Metric 'error-rate' Completed. Result: Successful
+14m         Normal    AnalysisRunSuccessful    analysisrun/cloud05-rollout-7b956d98b8-2-5   Analysis Completed. Result: Successful
+14m         Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-9pw54         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-9pw54 to cloud05-control-plane
+14m         Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-9pw54         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+14m         Normal    Created                  pod/cloud05-rollout-7b956d98b8-9pw54         Container created
+14m         Normal    Started                  pod/cloud05-rollout-7b956d98b8-9pw54         Container started
+14m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-7b956d98b8        Created pod: cloud05-rollout-7b956d98b8-km54s
+14m         Normal    Killing                  pod/cloud05-rollout-8cd557ccf-xbz4b          Stopping container demo-service
+14m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-7b956d98b8-2-5   Metric 'success-rate' Completed. Result: Successful
+14m         Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-km54s         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+14m         Normal    Created                  pod/cloud05-rollout-7b956d98b8-km54s         Container created
+14m         Normal    Started                  pod/cloud05-rollout-7b956d98b8-km54s         Container started
+14m         Warning   Unhealthy                pod/cloud05-rollout-8cd557ccf-xbz4b          Readiness probe failed: Get "http://10.244.0.31:8080/ready": dial tcp 10.244.0.31:8080: connect: connection refused
+14m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-8cd557ccf         Deleted pod: cloud05-rollout-8cd557ccf-xbz4b
+14m         Normal    Killing                  pod/cloud05-rollout-8cd557ccf-957r4          Stopping container demo-service
+14m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-8cd557ccf         Deleted pod: cloud05-rollout-8cd557ccf-957r4
+14m         Normal    Started                  pod/cloud05-rollout-59856cc485-njqlx         Container started
+14m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-59856cc485        Created pod: cloud05-rollout-59856cc485-njqlx
+14m         Normal    Pulled                   pod/cloud05-rollout-59856cc485-njqlx         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+14m         Normal    Created                  pod/cloud05-rollout-59856cc485-njqlx         Container created
+14m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-7b956d98b8        Deleted pod: cloud05-rollout-7b956d98b8-9pw54
+14m         Normal    Scheduled                pod/cloud05-rollout-59856cc485-njqlx         Successfully assigned cloud05/cloud05-rollout-59856cc485-njqlx to cloud05-control-plane
+14m         Normal    Killing                  pod/cloud05-rollout-7b956d98b8-9pw54         Stopping container demo-service
+14m         Normal    AnalysisRunSuccessful    analysisrun/cloud05-rollout-59856cc485-3-2   Analysis Completed. Result: Successful
+14m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-7b956d98b8        Deleted pod: cloud05-rollout-7b956d98b8-km54s
+14m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-59856cc485-3-2   Metric 'error-rate' Completed. Result: Successful
+14m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-59856cc485-3-2   Metric 'success-rate' Completed. Result: Successful
+14m         Normal    Killing                  pod/cloud05-rollout-7b956d98b8-km54s         Stopping container demo-service
+14m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-59856cc485        Created pod: cloud05-rollout-59856cc485-tzs2j
+14m         Normal    Created                  pod/cloud05-rollout-59856cc485-tzs2j         Container created
+14m         Normal    Started                  pod/cloud05-rollout-59856cc485-tzs2j         Container started
+14m         Normal    Scheduled                pod/cloud05-rollout-59856cc485-tzs2j         Successfully assigned cloud05/cloud05-rollout-59856cc485-tzs2j to cloud05-control-plane
+14m         Normal    Pulled                   pod/cloud05-rollout-59856cc485-tzs2j         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+14m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-59856cc485        Created pod: cloud05-rollout-59856cc485-47tm9
+14m         Normal    Killing                  pod/cloud05-rollout-7b956d98b8-x86ct         Stopping container demo-service
+14m         Normal    Scheduled                pod/cloud05-rollout-59856cc485-sn27b         Successfully assigned cloud05/cloud05-rollout-59856cc485-sn27b to cloud05-control-plane
+14m         Normal    Started                  pod/cloud05-rollout-59856cc485-47tm9         Container started
+14m         Normal    Created                  pod/cloud05-rollout-59856cc485-47tm9         Container created
+14m         Normal    Pulled                   pod/cloud05-rollout-59856cc485-47tm9         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+14m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-59856cc485-3-5   Metric 'success-rate' Completed. Result: Successful
+14m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-59856cc485-3-5   Metric 'error-rate' Completed. Result: Successful
+14m         Normal    AnalysisRunSuccessful    analysisrun/cloud05-rollout-59856cc485-3-5   Analysis Completed. Result: Successful
+14m         Normal    Pulled                   pod/cloud05-rollout-59856cc485-sn27b         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+14m         Normal    Scheduled                pod/cloud05-rollout-59856cc485-47tm9         Successfully assigned cloud05/cloud05-rollout-59856cc485-47tm9 to cloud05-control-plane
+14m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-7b956d98b8        Deleted pod: cloud05-rollout-7b956d98b8-x86ct
+14m         Normal    Started                  pod/cloud05-rollout-59856cc485-sn27b         Container started
+14m         Normal    Created                  pod/cloud05-rollout-59856cc485-sn27b         Container created
+14m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-59856cc485        Created pod: cloud05-rollout-59856cc485-sn27b
+14m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-7b956d98b8        Deleted pod: cloud05-rollout-7b956d98b8-r4jdw
+14m         Normal    Killing                  pod/cloud05-rollout-7b956d98b8-r4jdw         Stopping container demo-service
+13m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-59856cc485        Deleted pod: cloud05-rollout-59856cc485-47tm9
+13m         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-k5hx7          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-k5hx7 to cloud05-control-plane
+13m         Normal    Killing                  pod/cloud05-rollout-59856cc485-47tm9         Stopping container demo-service
+13m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-k5hx7
+13m         Normal    Created                  pod/cloud05-rollout-8cd557ccf-k5hx7          Container created
+13m         Normal    Started                  pod/cloud05-rollout-8cd557ccf-k5hx7          Container started
+13m         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-k5hx7          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+13m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-59856cc485        Deleted pod: cloud05-rollout-59856cc485-sn27b
+13m         Normal    Killing                  pod/cloud05-rollout-59856cc485-sn27b         Stopping container demo-service
+13m         Normal    AnalysisRunSuccessful    analysisrun/cloud05-rollout-8cd557ccf-4-2    Analysis Completed. Result: Successful
+13m         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-ngb9t          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-ngb9t to cloud05-control-plane
+13m         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-ngb9t          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+13m         Normal    Created                  pod/cloud05-rollout-8cd557ccf-ngb9t          Container created
+13m         Normal    Started                  pod/cloud05-rollout-8cd557ccf-ngb9t          Container started
+13m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-ngb9t
+13m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-8cd557ccf-4-2    Metric 'success-rate' Completed. Result: Successful
+13m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-8cd557ccf-4-2    Metric 'error-rate' Completed. Result: Successful
+13m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-59856cc485        Deleted pod: cloud05-rollout-59856cc485-tzs2j
+13m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-4k4ms
+13m         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-scmx5          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-scmx5 to cloud05-control-plane
+13m         Normal    Created                  pod/cloud05-rollout-8cd557ccf-scmx5          Container created
+13m         Normal    Started                  pod/cloud05-rollout-8cd557ccf-scmx5          Container started
+13m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-8cd557ccf-4-5    Metric 'success-rate' Completed. Result: Successful
+13m         Normal    Killing                  pod/cloud05-rollout-59856cc485-tzs2j         Stopping container demo-service
+13m         Normal    Started                  pod/cloud05-rollout-8cd557ccf-4k4ms          Container started
+13m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-scmx5
+13m         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-scmx5          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+13m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-8cd557ccf-4-5    Metric 'error-rate' Completed. Result: Successful
+13m         Normal    AnalysisRunSuccessful    analysisrun/cloud05-rollout-8cd557ccf-4-5    Analysis Completed. Result: Successful
+13m         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-4k4ms          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-4k4ms to cloud05-control-plane
+13m         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-4k4ms          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+13m         Normal    Created                  pod/cloud05-rollout-8cd557ccf-4k4ms          Container created
+13m         Normal    Killing                  pod/cloud05-rollout-59856cc485-njqlx         Stopping container demo-service
+13m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-59856cc485        Deleted pod: cloud05-rollout-59856cc485-njqlx
+13m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-8cd557ccf         Deleted pod: cloud05-rollout-8cd557ccf-4k4ms
+13m         Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-qtdtx         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-qtdtx to cloud05-control-plane
+13m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-7b956d98b8        Created pod: cloud05-rollout-7b956d98b8-qtdtx
+13m         Normal    Killing                  pod/cloud05-rollout-8cd557ccf-4k4ms          Stopping container demo-service
+13m         Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-qtdtx         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+13m         Normal    Started                  pod/cloud05-rollout-7b956d98b8-qtdtx         Container started
+13m         Normal    Created                  pod/cloud05-rollout-7b956d98b8-qtdtx         Container created
+13m         Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-ghbcn         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-ghbcn to cloud05-control-plane
+13m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-7b956d98b8        Created pod: cloud05-rollout-7b956d98b8-ghbcn
+13m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-7b956d98b8-5-2   Metric 'success-rate' Completed. Result: Successful
+13m         Normal    Killing                  pod/cloud05-rollout-8cd557ccf-ngb9t          Stopping container demo-service
+13m         Normal    Created                  pod/cloud05-rollout-7b956d98b8-ghbcn         Container created
+13m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-8cd557ccf         Deleted pod: cloud05-rollout-8cd557ccf-ngb9t
+13m         Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-ghbcn         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+13m         Normal    Started                  pod/cloud05-rollout-7b956d98b8-ghbcn         Container started
+13m         Normal    AnalysisRunSuccessful    analysisrun/cloud05-rollout-7b956d98b8-5-2   Analysis Completed. Result: Successful
+13m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-7b956d98b8-5-2   Metric 'error-rate' Completed. Result: Successful
+12m         Normal    AnalysisRunSuccessful    analysisrun/cloud05-rollout-7b956d98b8-5-5   Analysis Completed. Result: Successful
+12m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-7b956d98b8        Created pod: cloud05-rollout-7b956d98b8-knzz9
+12m         Normal    Started                  pod/cloud05-rollout-7b956d98b8-2649v         Container started
+12m         Normal    Created                  pod/cloud05-rollout-7b956d98b8-2649v         Container created
+12m         Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-2649v         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+12m         Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-2649v         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-2649v to cloud05-control-plane
+12m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-7b956d98b8-5-5   Metric 'success-rate' Completed. Result: Successful
+12m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-7b956d98b8-5-5   Metric 'error-rate' Completed. Result: Successful
+12m         Normal    Created                  pod/cloud05-rollout-7b956d98b8-knzz9         Container created
+12m         Normal    Started                  pod/cloud05-rollout-7b956d98b8-knzz9         Container started
+12m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-7b956d98b8        Created pod: cloud05-rollout-7b956d98b8-2649v
+12m         Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-knzz9         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+12m         Normal    Killing                  pod/cloud05-rollout-8cd557ccf-scmx5          Stopping container demo-service
+12m         Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-knzz9         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-knzz9 to cloud05-control-plane
+12m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-8cd557ccf         Deleted pod: cloud05-rollout-8cd557ccf-scmx5
+12m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-8cd557ccf         Deleted pod: cloud05-rollout-8cd557ccf-k5hx7
+12m         Normal    Killing                  pod/cloud05-rollout-8cd557ccf-k5hx7          Stopping container demo-service
+12m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-7b956d98b8        Deleted pod: cloud05-rollout-7b956d98b8-knzz9
+12m         Normal    Killing                  pod/cloud05-rollout-7b956d98b8-knzz9         Stopping container demo-service
+12m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-59856cc485        Created pod: cloud05-rollout-59856cc485-grp7k
+12m         Normal    Scheduled                pod/cloud05-rollout-59856cc485-grp7k         Successfully assigned cloud05/cloud05-rollout-59856cc485-grp7k to cloud05-control-plane
+12m         Normal    Pulled                   pod/cloud05-rollout-59856cc485-grp7k         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+12m         Normal    Started                  pod/cloud05-rollout-59856cc485-grp7k         Container started
+12m         Normal    Created                  pod/cloud05-rollout-59856cc485-grp7k         Container created
+12m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-59856cc485-6-2   Metric 'success-rate' Completed. Result: Successful
+12m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-59856cc485-6-2   Metric 'error-rate' Completed. Result: Successful
+12m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-7b956d98b8        Deleted pod: cloud05-rollout-7b956d98b8-2649v
+12m         Normal    Killing                  pod/cloud05-rollout-7b956d98b8-2649v         Stopping container demo-service
+12m         Normal    Scheduled                pod/cloud05-rollout-59856cc485-tnmfx         Successfully assigned cloud05/cloud05-rollout-59856cc485-tnmfx to cloud05-control-plane
+12m         Normal    Pulled                   pod/cloud05-rollout-59856cc485-tnmfx         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+12m         Normal    Created                  pod/cloud05-rollout-59856cc485-tnmfx         Container created
+12m         Normal    Started                  pod/cloud05-rollout-59856cc485-tnmfx         Container started
+12m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-59856cc485        Created pod: cloud05-rollout-59856cc485-tnmfx
+12m         Normal    AnalysisRunSuccessful    analysisrun/cloud05-rollout-59856cc485-6-2   Analysis Completed. Result: Successful
+12m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-59856cc485-6-5   Metric 'success-rate' Completed. Result: Successful
+12m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-59856cc485        Created pod: cloud05-rollout-59856cc485-xm8mv
+12m         Normal    Scheduled                pod/cloud05-rollout-59856cc485-xm8mv         Successfully assigned cloud05/cloud05-rollout-59856cc485-xm8mv to cloud05-control-plane
+12m         Normal    Started                  pod/cloud05-rollout-59856cc485-b87sm         Container started
+12m         Normal    Created                  pod/cloud05-rollout-59856cc485-b87sm         Container created
+12m         Normal    Created                  pod/cloud05-rollout-59856cc485-xm8mv         Container created
+12m         Normal    Started                  pod/cloud05-rollout-59856cc485-xm8mv         Container started
+12m         Normal    Killing                  pod/cloud05-rollout-7b956d98b8-qtdtx         Stopping container demo-service
+12m         Normal    Scheduled                pod/cloud05-rollout-59856cc485-b87sm         Successfully assigned cloud05/cloud05-rollout-59856cc485-b87sm to cloud05-control-plane
+12m         Normal    Pulled                   pod/cloud05-rollout-59856cc485-xm8mv         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+12m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-7b956d98b8        Deleted pod: cloud05-rollout-7b956d98b8-qtdtx
+12m         Normal    Pulled                   pod/cloud05-rollout-59856cc485-b87sm         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+12m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-59856cc485        Created pod: cloud05-rollout-59856cc485-b87sm
+12m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-59856cc485-6-5   Metric 'error-rate' Completed. Result: Successful
+12m         Normal    AnalysisRunSuccessful    analysisrun/cloud05-rollout-59856cc485-6-5   Analysis Completed. Result: Successful
+12m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-7b956d98b8        Deleted pod: cloud05-rollout-7b956d98b8-ghbcn
+12m         Normal    Killing                  pod/cloud05-rollout-7b956d98b8-ghbcn         Stopping container demo-service
+10m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-59856cc485        Deleted pod: cloud05-rollout-59856cc485-tnmfx
+10m         Normal    Killing                  pod/cloud05-rollout-59856cc485-tnmfx         Stopping container demo-service
+10m         Normal    Started                  pod/cloud05-rollout-7b956d98b8-9kmhx         Container started
+10m         Normal    Created                  pod/cloud05-rollout-7b956d98b8-9kmhx         Container created
+10m         Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-9kmhx         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+10m         Normal    SuccessfulCreate         replicaset/cloud05-rollout-7b956d98b8        Created pod: cloud05-rollout-7b956d98b8-9kmhx
+10m         Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-9kmhx         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-9kmhx to cloud05-control-plane
+10m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-59856cc485        Deleted pod: cloud05-rollout-59856cc485-grp7k
+9m5s        Normal    SuccessfulCreate         replicaset/cloud05-rollout-7b956d98b8        (combined from similar events): Created pod: cloud05-rollout-7b956d98b8-bbdtp
+10m         Normal    Started                  pod/cloud05-rollout-7b956d98b8-9l4kv         Container started
+10m         Normal    Killing                  pod/cloud05-rollout-59856cc485-grp7k         Stopping container demo-service
+10m         Normal    Created                  pod/cloud05-rollout-7b956d98b8-9l4kv         Container created
+10m         Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-9l4kv         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+10m         Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-9l4kv         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-9l4kv to cloud05-control-plane
+10m         Normal    AnalysisRunSuccessful    analysisrun/cloud05-rollout-7b956d98b8-7-2   Analysis Completed. Result: Successful
+10m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-7b956d98b8-7-2   Metric 'error-rate' Completed. Result: Successful
+10m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-7b956d98b8-7-2   Metric 'success-rate' Completed. Result: Successful
+10m         Normal    Started                  pod/cloud05-rollout-7b956d98b8-lfsgh         Container started
+10m         Normal    Killing                  pod/cloud05-rollout-59856cc485-b87sm         Stopping container demo-service
+10m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-59856cc485        Deleted pod: cloud05-rollout-59856cc485-b87sm
+10m         Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-n5qzk         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-n5qzk to cloud05-control-plane
+10m         Normal    AnalysisRunSuccessful    rollout/cloud05-rollout                      (combined from similar events): Step Analysis Run 'cloud05-rollout-7b956d98b8-7-5' Status New: 'Successful' Previous: 'Running'
+10m         Normal    Started                  pod/cloud05-rollout-7b956d98b8-n5qzk         Container started
+10m         Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-n5qzk         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+10m         Normal    Created                  pod/cloud05-rollout-7b956d98b8-n5qzk         Container created
+10m         Normal    AnalysisRunSuccessful    analysisrun/cloud05-rollout-7b956d98b8-7-5   Analysis Completed. Result: Successful
+10m         Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-lfsgh         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-lfsgh to cloud05-control-plane
+10m         Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-lfsgh         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+10m         Normal    Created                  pod/cloud05-rollout-7b956d98b8-lfsgh         Container created
+10m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-7b956d98b8-7-5   Metric 'error-rate' Completed. Result: Successful
+10m         Normal    MetricSuccessful         analysisrun/cloud05-rollout-7b956d98b8-7-5   Metric 'success-rate' Completed. Result: Successful
+10m         Normal    Killing                  pod/cloud05-rollout-59856cc485-xm8mv         Stopping container demo-service
+10m         Normal    SuccessfulDelete         replicaset/cloud05-rollout-59856cc485        Deleted pod: cloud05-rollout-59856cc485-xm8mv
+10m         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-lzjdc            Stopping container demo-service
+10m         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-n82fv            Stopping container demo-service
+10m         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-hchc9            Stopping container demo-service
+9m57s       Normal    Killing                  pod/cloud05-rollout-7b956d98b8-n5qzk         Stopping container demo-service
+9m57s       Normal    Scheduled                pod/cloud05-rollout-59856cc485-p8r56         Successfully assigned cloud05/cloud05-rollout-59856cc485-p8r56 to cloud05-control-plane
+9m57s       Normal    SuccessfulCreate         replicaset/cloud05-rollout-59856cc485        Created pod: cloud05-rollout-59856cc485-p8r56
+9m57s       Normal    SuccessfulDelete         replicaset/cloud05-rollout-7b956d98b8        Deleted pod: cloud05-rollout-7b956d98b8-n5qzk
+9m56s       Normal    Pulled                   pod/cloud05-rollout-59856cc485-p8r56         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+9m56s       Normal    Started                  pod/cloud05-rollout-59856cc485-p8r56         Container started
+9m56s       Normal    Created                  pod/cloud05-rollout-59856cc485-p8r56         Container created
+8m51s       Normal    SuccessfulCreate         replicaset/cloud05-rollout-59856cc485        (combined from similar events): Created pod: cloud05-rollout-59856cc485-h24vl
+9m43s       Normal    MetricSuccessful         analysisrun/cloud05-rollout-59856cc485-8-2   Metric 'success-rate' Completed. Result: Successful
+9m43s       Normal    Killing                  pod/cloud05-rollout-7b956d98b8-lfsgh         Stopping container demo-service
+9m43s       Normal    AnalysisRunSuccessful    analysisrun/cloud05-rollout-59856cc485-8-2   Analysis Completed. Result: Successful
+9m43s       Normal    MetricSuccessful         analysisrun/cloud05-rollout-59856cc485-8-2   Metric 'error-rate' Completed. Result: Successful
+8m51s       Normal    SuccessfulDelete         replicaset/cloud05-rollout-7b956d98b8        (combined from similar events): Deleted pod: cloud05-rollout-7b956d98b8-bbdtp
+9m43s       Normal    Scheduled                pod/cloud05-rollout-59856cc485-6hlql         Successfully assigned cloud05/cloud05-rollout-59856cc485-6hlql to cloud05-control-plane
+9m41s       Normal    Pulled                   pod/cloud05-rollout-59856cc485-6hlql         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+9m41s       Normal    Created                  pod/cloud05-rollout-59856cc485-6hlql         Container created
+9m41s       Normal    Started                  pod/cloud05-rollout-59856cc485-6hlql         Container started
+9m27s       Normal    MetricSuccessful         analysisrun/cloud05-rollout-59856cc485-8-5   Metric 'error-rate' Completed. Result: Successful
+9m27s       Normal    Scheduled                pod/cloud05-rollout-59856cc485-btrc6         Successfully assigned cloud05/cloud05-rollout-59856cc485-btrc6 to cloud05-control-plane
+9m27s       Normal    Started                  pod/cloud05-rollout-59856cc485-6zwvq         Container started
+9m27s       Normal    Created                  pod/cloud05-rollout-59856cc485-6zwvq         Container created
+9m27s       Normal    Pulled                   pod/cloud05-rollout-59856cc485-6zwvq         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+9m27s       Normal    Killing                  pod/cloud05-rollout-7b956d98b8-9l4kv         Stopping container demo-service
+9m27s       Normal    Scheduled                pod/cloud05-rollout-59856cc485-6zwvq         Successfully assigned cloud05/cloud05-rollout-59856cc485-6zwvq to cloud05-control-plane
+9m27s       Normal    Started                  pod/cloud05-rollout-59856cc485-btrc6         Container started
+9m27s       Normal    MetricSuccessful         analysisrun/cloud05-rollout-59856cc485-8-5   Metric 'success-rate' Completed. Result: Successful
+9m27s       Normal    Pulled                   pod/cloud05-rollout-59856cc485-btrc6         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+9m27s       Normal    AnalysisRunSuccessful    analysisrun/cloud05-rollout-59856cc485-8-5   Analysis Completed. Result: Successful
+9m27s       Normal    Created                  pod/cloud05-rollout-59856cc485-btrc6         Container created
+9m23s       Normal    Killing                  pod/cloud05-rollout-7b956d98b8-9kmhx         Stopping container demo-service
+9m5s        Normal    SuccessfulDelete         replicaset/cloud05-rollout-59856cc485        Deleted pod: cloud05-rollout-59856cc485-6hlql
+9m5s        Normal    Started                  pod/cloud05-rollout-7b956d98b8-bbdtp         Container started
+9m5s        Normal    Killing                  pod/cloud05-rollout-59856cc485-6hlql         Stopping container demo-service
+9m5s        Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-bbdtp         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-bbdtp to cloud05-control-plane
+9m5s        Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-bbdtp         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+9m5s        Normal    Created                  pod/cloud05-rollout-7b956d98b8-bbdtp         Container created
+8m51s       Warning   AnalysisRunFailed        rollout/cloud05-rollout                      Step Analysis Run 'cloud05-rollout-7b956d98b8-9-2' Status New: 'Failed' Previous: 'Running'
+8m51s       Warning   RolloutAborted           rollout/cloud05-rollout                      Rollout aborted update to revision 9: Step-based analysis phase error/failed: Metric "success-rate" assessed Failed due to failed (2) > failureLimit (1)
+8m51s       Normal    Started                  pod/cloud05-rollout-59856cc485-h24vl         Container started
+8m51s       Normal    Created                  pod/cloud05-rollout-59856cc485-h24vl         Container created
+8m51s       Normal    Pulled                   pod/cloud05-rollout-59856cc485-h24vl         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+8m51s       Normal    Scheduled                pod/cloud05-rollout-59856cc485-h24vl         Successfully assigned cloud05/cloud05-rollout-59856cc485-h24vl to cloud05-control-plane
+8m51s       Warning   MetricFailed             analysisrun/cloud05-rollout-7b956d98b8-9-2   Metric 'success-rate' Completed. Result: Failed
+8m51s       Warning   MetricFailed             analysisrun/cloud05-rollout-7b956d98b8-9-2   Metric 'error-rate' Completed. Result: Failed
+8m51s       Warning   AnalysisRunFailed        analysisrun/cloud05-rollout-7b956d98b8-9-2   Analysis Completed. Result: Failed
+8m51s       Normal    Killing                  pod/cloud05-rollout-7b956d98b8-bbdtp         Stopping container demo-service
+7m48s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-lf4f5
+7m48s       Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-h49bd            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-h49bd to cloud05-control-plane
+7m48s       Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-lf4f5            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+7m48s       Normal    Started                  pod/cloud05-demo-7fcd87c8cc-lf4f5            Container started
+7m48s       Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-lf4f5            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-lf4f5 to cloud05-control-plane
+7m48s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled up replica set cloud05-demo-7fcd87c8cc from 0 to 3
+7m48s       Normal    Created                  pod/cloud05-demo-7fcd87c8cc-lf4f5            Container created
+7m48s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-h49bd
+7m48s       Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-jjj2p            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-jjj2p to cloud05-control-plane
+7m48s       Normal    Started                  pod/cloud05-demo-7fcd87c8cc-jjj2p            Container started
+7m48s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-jjj2p
+7m48s       Normal    Created                  pod/cloud05-demo-7fcd87c8cc-jjj2p            Container created
+7m48s       Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-jjj2p            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+7m48s       Normal    Started                  pod/cloud05-demo-7fcd87c8cc-h49bd            Container started
+7m48s       Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-h49bd            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+7m48s       Normal    Created                  pod/cloud05-demo-7fcd87c8cc-h49bd            Container created
+7m43s       Normal    Started                  pod/cloud05-demo-6b69945d-28xsv              Container started
+7m43s       Normal    Created                  pod/cloud05-demo-6b69945d-28xsv              Container created
+7m43s       Normal    Pulled                   pod/cloud05-demo-6b69945d-28xsv              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+7m43s       Normal    Scheduled                pod/cloud05-demo-6b69945d-28xsv              Successfully assigned cloud05/cloud05-demo-6b69945d-28xsv to cloud05-control-plane
+6m2s        Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled up replica set cloud05-demo-6b69945d from 0 to 1
+7m43s       Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-28xsv
+7m40s       Normal    Scheduled                pod/cloud05-demo-6b69945d-d722j              Successfully assigned cloud05/cloud05-demo-6b69945d-d722j to cloud05-control-plane
+7m40s       Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-jjj2p
+7m40s       Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-jjj2p            Stopping container demo-service
+5m57s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled down replica set cloud05-demo-7fcd87c8cc from 3 to 2
+7m40s       Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-d722j
+7m40s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled up replica set cloud05-demo-6b69945d from 1 to 2
+7m39s       Normal    Created                  pod/cloud05-demo-6b69945d-d722j              Container created
+7m39s       Normal    Pulled                   pod/cloud05-demo-6b69945d-d722j              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+7m39s       Normal    Started                  pod/cloud05-demo-6b69945d-d722j              Container started
+7m36s       Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-59fj2
+5m53s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled up replica set cloud05-demo-6b69945d from 2 to 3
+5m53s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled down replica set cloud05-demo-7fcd87c8cc from 2 to 1
+7m36s       Normal    Scheduled                pod/cloud05-demo-6b69945d-59fj2              Successfully assigned cloud05/cloud05-demo-6b69945d-59fj2 to cloud05-control-plane
+7m36s       Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-lf4f5            Stopping container demo-service
+7m36s       Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-lf4f5
+7m35s       Normal    Pulled                   pod/cloud05-demo-6b69945d-59fj2              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+7m35s       Normal    Started                  pod/cloud05-demo-6b69945d-59fj2              Container started
+7m35s       Normal    Created                  pod/cloud05-demo-6b69945d-59fj2              Container created
+7m32s       Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-h49bd
+7m32s       Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-h49bd            Stopping container demo-service
+5m49s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled down replica set cloud05-demo-7fcd87c8cc from 1 to 0
+6m16s       Normal    Killing                  pod/cloud05-rollout-59856cc485-6zwvq         Stopping container demo-service
+6m16s       Normal    Killing                  pod/cloud05-rollout-59856cc485-btrc6         Stopping container demo-service
+6m16s       Normal    Killing                  pod/cloud05-rollout-59856cc485-h24vl         Stopping container demo-service
+6m16s       Normal    Killing                  pod/cloud05-rollout-59856cc485-p8r56         Stopping container demo-service
+6m15s       Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-fvj6r            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-fvj6r to cloud05-control-plane
+6m15s       Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-fvj6r            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+6m15s       Normal    Created                  pod/cloud05-demo-7fcd87c8cc-fvj6r            Container created
+6m15s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-fvj6r
+6m15s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled up replica set cloud05-demo-7fcd87c8cc from 0 to 1
+6m14s       Normal    Started                  pod/cloud05-demo-7fcd87c8cc-fvj6r            Container started
+6m10s       Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-28xsv
+5m29s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      (combined from similar events): Scaled down replica set cloud05-demo-6b69945d from 1 to 0
+6m10s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled down replica set cloud05-demo-6b69945d from 3 to 2
+6m10s       Normal    Killing                  pod/cloud05-demo-6b69945d-28xsv              Stopping container demo-service
+6m10s       Normal    Started                  pod/cloud05-demo-7fcd87c8cc-6dzwx            Container started
+6m10s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-6dzwx
+6m10s       Normal    Created                  pod/cloud05-demo-7fcd87c8cc-6dzwx            Container created
+6m10s       Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-6dzwx            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+6m10s       Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-6dzwx            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-6dzwx to cloud05-control-plane
+6m6s        Normal    Killing                  pod/cloud05-demo-6b69945d-59fj2              Stopping container demo-service
+6m6s        Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-59fj2
+6m6s        Normal    Started                  pod/cloud05-demo-7fcd87c8cc-2kbxf            Container started
+6m6s        Normal    Created                  pod/cloud05-demo-7fcd87c8cc-2kbxf            Container created
+6m6s        Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-2kbxf            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+6m6s        Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-2kbxf            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-2kbxf to cloud05-control-plane
+6m6s        Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-2kbxf
+6m2s        Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-d722j
+6m2s        Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-zb6gm
+6m2s        Normal    Killing                  pod/cloud05-demo-6b69945d-d722j              Stopping container demo-service
+6m2s        Normal    Scheduled                pod/cloud05-demo-6b69945d-zb6gm              Successfully assigned cloud05/cloud05-demo-6b69945d-zb6gm to cloud05-control-plane
+6m2s        Normal    Pulled                   pod/cloud05-demo-6b69945d-zb6gm              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+6m1s        Normal    Created                  pod/cloud05-demo-6b69945d-zb6gm              Container created
+6m1s        Normal    Started                  pod/cloud05-demo-6b69945d-zb6gm              Container started
+5m57s       Normal    Pulled                   pod/cloud05-demo-6b69945d-7vlnd              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+5m57s       Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-7vlnd
+5m57s       Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-2kbxf
+5m57s       Normal    Started                  pod/cloud05-demo-6b69945d-7vlnd              Container started
+5m57s       Normal    Created                  pod/cloud05-demo-6b69945d-7vlnd              Container created
+5m57s       Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-2kbxf            Stopping container demo-service
+5m57s       Normal    Scheduled                pod/cloud05-demo-6b69945d-7vlnd              Successfully assigned cloud05/cloud05-demo-6b69945d-7vlnd to cloud05-control-plane
+5m53s       Normal    Started                  pod/cloud05-demo-6b69945d-vtz5r              Container started
+5m53s       Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-vtz5r
+5m53s       Normal    Scheduled                pod/cloud05-demo-6b69945d-vtz5r              Successfully assigned cloud05/cloud05-demo-6b69945d-vtz5r to cloud05-control-plane
+5m53s       Normal    Pulled                   pod/cloud05-demo-6b69945d-vtz5r              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+5m53s       Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-6dzwx            Stopping container demo-service
+5m53s       Normal    Created                  pod/cloud05-demo-6b69945d-vtz5r              Container created
+5m53s       Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-6dzwx
+5m49s       Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-fvj6r
+5m49s       Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-fvj6r            Stopping container demo-service
+5m41s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7744b967bc           Created pod: cloud05-demo-7744b967bc-9ljq5
+5m41s       Normal    Pulled                   pod/cloud05-demo-7744b967bc-9ljq5            Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+5m41s       Normal    Created                  pod/cloud05-demo-7744b967bc-9ljq5            Container created
+5m41s       Normal    Started                  pod/cloud05-demo-7744b967bc-9ljq5            Container started
+5m41s       Normal    Scheduled                pod/cloud05-demo-7744b967bc-9ljq5            Successfully assigned cloud05/cloud05-demo-7744b967bc-9ljq5 to cloud05-control-plane
+5m37s       Normal    Scheduled                pod/cloud05-demo-7744b967bc-8qjjz            Successfully assigned cloud05/cloud05-demo-7744b967bc-8qjjz to cloud05-control-plane
+5m37s       Normal    Killing                  pod/cloud05-demo-6b69945d-7vlnd              Stopping container demo-service
+5m37s       Normal    Started                  pod/cloud05-demo-7744b967bc-8qjjz            Container started
+5m37s       Normal    Created                  pod/cloud05-demo-7744b967bc-8qjjz            Container created
+5m37s       Normal    Pulled                   pod/cloud05-demo-7744b967bc-8qjjz            Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+5m37s       Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-7vlnd
+5m37s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7744b967bc           Created pod: cloud05-demo-7744b967bc-8qjjz
+5m33s       Normal    Killing                  pod/cloud05-demo-6b69945d-vtz5r              Stopping container demo-service
+5m33s       Normal    Pulled                   pod/cloud05-demo-7744b967bc-sgzv2            Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+5m33s       Normal    Created                  pod/cloud05-demo-7744b967bc-sgzv2            Container created
+5m33s       Normal    Started                  pod/cloud05-demo-7744b967bc-sgzv2            Container started
+5m33s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7744b967bc           Created pod: cloud05-demo-7744b967bc-sgzv2
+5m33s       Normal    Scheduled                pod/cloud05-demo-7744b967bc-sgzv2            Successfully assigned cloud05/cloud05-demo-7744b967bc-sgzv2 to cloud05-control-plane
+5m33s       Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-vtz5r
+5m29s       Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-zb6gm
+5m29s       Normal    Killing                  pod/cloud05-demo-6b69945d-zb6gm              Stopping container demo-service
+5m21s       Normal    Killing                  pod/cloud05-demo-7744b967bc-sgzv2            Stopping container demo-service
+5m21s       Normal    Killing                  pod/cloud05-demo-7744b967bc-8qjjz            Stopping container demo-service
+5m21s       Normal    Killing                  pod/cloud05-demo-7744b967bc-9ljq5            Stopping container demo-service
+5m20s       Normal    NewReplicaSetCreated     rollout/cloud05-rollout                      Created ReplicaSet cloud05-rollout-8cd557ccf (revision 1)
+5m20s       Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-8phbn
+5m20s       Normal    RolloutAddedToInformer   rollout/cloud05-rollout                      Rollout resource added to informer: cloud05/cloud05-rollout
+5m20s       Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-krx56          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-krx56 to cloud05-control-plane
+5m20s       Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-krx56          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+5m20s       Normal    Created                  pod/cloud05-rollout-8cd557ccf-krx56          Container created
+5m20s       Normal    RolloutUpdated           rollout/cloud05-rollout                      Rollout updated to revision 1
+5m20s       Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-gbdzs          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-gbdzs to cloud05-control-plane
+5m20s       Normal    RolloutNotCompleted      rollout/cloud05-rollout                      Rollout not completed, started update to revision 1 (8cd557ccf)
+5m20s       Normal    Created                  pod/cloud05-rollout-8cd557ccf-sh86l          Container created
+5m20s       Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-sh86l          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-sh86l to cloud05-control-plane
+5m20s       Normal    RolloutCompleted         rollout/cloud05-rollout                      Rollout completed update to revision 1 (8cd557ccf): Initial deploy
+5m20s       Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-krx56
+5m20s       Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-gbdzs
+5m20s       Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-gbdzs          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+5m20s       Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-sh86l
+5m20s       Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-sh86l          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+5m20s       Normal    Created                  pod/cloud05-rollout-8cd557ccf-gbdzs          Container created
+5m20s       Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled up ReplicaSet cloud05-rollout-8cd557ccf (revision 1) from 0 to 4
+5m20s       Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-8phbn          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-8phbn to cloud05-control-plane
+5m19s       Normal    Started                  pod/cloud05-rollout-8cd557ccf-8phbn          Container started
+5m19s       Normal    Started                  pod/cloud05-rollout-8cd557ccf-gbdzs          Container started
+5m19s       Normal    Started                  pod/cloud05-rollout-8cd557ccf-krx56          Container started
+5m19s       Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-8phbn          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+5m19s       Normal    Started                  pod/cloud05-rollout-8cd557ccf-sh86l          Container started
+5m19s       Normal    Created                  pod/cloud05-rollout-8cd557ccf-8phbn          Container created
+4m55s       Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled down ReplicaSet cloud05-rollout-8cd557ccf (revision 1) from 4 to 3
+5m16s       Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-lqwrl         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-lqwrl to cloud05-control-plane
+5m16s       Normal    NewReplicaSetCreated     rollout/cloud05-rollout                      Created ReplicaSet cloud05-rollout-7b956d98b8 (revision 2)
+5m16s       Normal    RolloutNotCompleted      rollout/cloud05-rollout                      Rollout not completed, started update to revision 2 (7b956d98b8)
+5m16s       Normal    SuccessfulCreate         replicaset/cloud05-rollout-7b956d98b8        Created pod: cloud05-rollout-7b956d98b8-lqwrl
+5m16s       Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled up ReplicaSet cloud05-rollout-7b956d98b8 (revision 2) from 0 to 1
+5m16s       Normal    SuccessfulDelete         replicaset/cloud05-rollout-8cd557ccf         Deleted pod: cloud05-rollout-8cd557ccf-sh86l
+5m16s       Normal    RolloutUpdated           rollout/cloud05-rollout                      Rollout updated to revision 2
+5m15s       Normal    Started                  pod/cloud05-rollout-7b956d98b8-lqwrl         Container started
+5m15s       Normal    Created                  pod/cloud05-rollout-7b956d98b8-lqwrl         Container created
+5m15s       Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-lqwrl         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+5m15s       Normal    Killing                  pod/cloud05-rollout-8cd557ccf-sh86l          Stopping container demo-service
+4m51s       Normal    RolloutStepCompleted     rollout/cloud05-rollout                      Rollout step 1/7 completed (setWeight: 25)
+4m51s       Normal    RolloutPaused            rollout/cloud05-rollout                      Rollout is paused (CanaryPauseStep)
+5m5s        Normal    AnalysisRunRunning       rollout/cloud05-rollout                      Step Analysis Run 'cloud05-rollout-7b956d98b8-2-2' Status New: 'Running' Previous: ''
+4m45s       Normal    RolloutStepCompleted     rollout/cloud05-rollout                      Rollout step 2/7 completed (pause: 6s)
+5m5s        Normal    RolloutResumed           rollout/cloud05-rollout                      Rollout is resumed
+5m1s        Normal    Created                  pod/cloud05-rollout-8cd557ccf-mj4rw          Container created
+5m1s        Normal    Killing                  pod/cloud05-rollout-7b956d98b8-lqwrl         Stopping container demo-service
+5m1s        Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled up ReplicaSet cloud05-rollout-8cd557ccf (revision 1) from 3 to 4
+5m1s        Normal    SuccessfulDelete         replicaset/cloud05-rollout-7b956d98b8        Deleted pod: cloud05-rollout-7b956d98b8-lqwrl
+5m1s        Warning   AnalysisRunFailed        rollout/cloud05-rollout                      Step Analysis Run 'cloud05-rollout-7b956d98b8-2-2' Status New: 'Failed' Previous: 'Running'
+5m1s        Warning   RolloutAborted           rollout/cloud05-rollout                      Rollout aborted update to revision 2: Step-based analysis phase error/failed: Metric "success-rate" assessed Failed due to failed (2) > failureLimit (1)
+5m1s        Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled down ReplicaSet cloud05-rollout-7b956d98b8 (revision 2) from 1 to 0
+5m1s        Warning   AnalysisRunFailed        analysisrun/cloud05-rollout-7b956d98b8-2-2   Analysis Completed. Result: Failed
+5m1s        Normal    Started                  pod/cloud05-rollout-8cd557ccf-mj4rw          Container started
+5m1s        Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-mj4rw          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+5m1s        Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-mj4rw          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-mj4rw to cloud05-control-plane
+5m1s        Warning   MetricFailed             analysisrun/cloud05-rollout-7b956d98b8-2-2   Metric 'success-rate' Completed. Result: Failed
+5m1s        Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-mj4rw
+5m1s        Warning   MetricFailed             analysisrun/cloud05-rollout-7b956d98b8-2-2   Metric 'error-rate' Completed. Result: Failed
+4m55s       Normal    Killing                  pod/cloud05-rollout-8cd557ccf-mj4rw          Stopping container demo-service
+4m55s       Normal    NewReplicaSetCreated     rollout/cloud05-rollout                      Created ReplicaSet cloud05-rollout-59856cc485 (revision 3)
+4m55s       Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled up ReplicaSet cloud05-rollout-59856cc485 (revision 3) from 0 to 1
+4m55s       Normal    SuccessfulDelete         replicaset/cloud05-rollout-8cd557ccf         Deleted pod: cloud05-rollout-8cd557ccf-mj4rw
+4m55s       Normal    RolloutUpdated           rollout/cloud05-rollout                      Rollout updated to revision 3
+4m55s       Normal    Scheduled                pod/cloud05-rollout-59856cc485-l4sb2         Successfully assigned cloud05/cloud05-rollout-59856cc485-l4sb2 to cloud05-control-plane
+4m55s       Normal    Created                  pod/cloud05-rollout-59856cc485-l4sb2         Container created
+4m55s       Normal    Pulled                   pod/cloud05-rollout-59856cc485-l4sb2         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+4m55s       Normal    SuccessfulCreate         replicaset/cloud05-rollout-59856cc485        Created pod: cloud05-rollout-59856cc485-l4sb2
+4m54s       Normal    Started                  pod/cloud05-rollout-59856cc485-l4sb2         Container started
+4m41s       Normal    Started                  pod/cloud05-rollout-8cd557ccf-bp2kx          Container started
+4m41s       Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-bp2kx          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-bp2kx to cloud05-control-plane
+4m41s       Warning   AnalysisRunFailed        analysisrun/cloud05-rollout-59856cc485-3-2   Analysis Completed. Result: Failed
+4m41s       Warning   MetricFailed             analysisrun/cloud05-rollout-59856cc485-3-2   Metric 'success-rate' Completed. Result: Failed
+4m41s       Normal    SuccessfulDelete         replicaset/cloud05-rollout-59856cc485        Deleted pod: cloud05-rollout-59856cc485-l4sb2
+4m41s       Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-bp2kx
+4m41s       Normal    Killing                  pod/cloud05-rollout-59856cc485-l4sb2         Stopping container demo-service
+4m41s       Warning   AnalysisRunFailed        rollout/cloud05-rollout                      Step Analysis Run 'cloud05-rollout-59856cc485-3-2' Status New: 'Failed' Previous: 'Running'
+4m41s       Warning   MetricFailed             analysisrun/cloud05-rollout-59856cc485-3-2   Metric 'error-rate' Completed. Result: Failed
+4m41s       Warning   RolloutAborted           rollout/cloud05-rollout                      Rollout aborted update to revision 3: Step-based analysis phase error/failed: Metric "success-rate" assessed Failed due to failed (2) > failureLimit (1)
+4m41s       Normal    Created                  pod/cloud05-rollout-8cd557ccf-bp2kx          Container created
+4m41s       Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-bp2kx          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+4m1s        Normal    SuccessfulCreate         replicaset/cloud05-rollout-7b956d98b8        Created pod: cloud05-rollout-7b956d98b8-hh4pc
+4m1s        Normal    SuccessfulDelete         replicaset/cloud05-rollout-8cd557ccf         Deleted pod: cloud05-rollout-8cd557ccf-bp2kx
+4m1s        Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-hh4pc         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-hh4pc to cloud05-control-plane
+4m1s        Normal    Killing                  pod/cloud05-rollout-8cd557ccf-bp2kx          Stopping container demo-service
+4m          Normal    Created                  pod/cloud05-rollout-7b956d98b8-hh4pc         Container created
+4m          Normal    Started                  pod/cloud05-rollout-7b956d98b8-hh4pc         Container started
+4m          Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-hh4pc         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+3m51s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-h697q
+3m51s       Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-h697q            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-h697q to cloud05-control-plane
+3m51s       Normal    Killing                  pod/cloud05-rollout-8cd557ccf-krx56          Stopping container demo-service
+3m51s       Normal    Killing                  pod/cloud05-rollout-7b956d98b8-hh4pc         Stopping container demo-service
+3m51s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled up replica set cloud05-demo-7fcd87c8cc from 0 to 3
+3m51s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-s94jb
+3m51s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-cl4tv
+3m51s       Normal    Killing                  pod/cloud05-rollout-8cd557ccf-8phbn          Stopping container demo-service
+3m51s       Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-cl4tv            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-cl4tv to cloud05-control-plane
+3m51s       Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-s94jb            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-s94jb to cloud05-control-plane
+3m51s       Normal    Killing                  pod/cloud05-rollout-8cd557ccf-gbdzs          Stopping container demo-service
+3m50s       Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-h697q            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+3m50s       Normal    Created                  pod/cloud05-demo-7fcd87c8cc-h697q            Container created
+3m50s       Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-s94jb            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+3m50s       Normal    Created                  pod/cloud05-demo-7fcd87c8cc-s94jb            Container created
+3m50s       Normal    Started                  pod/cloud05-demo-7fcd87c8cc-s94jb            Container started
+3m50s       Normal    Started                  pod/cloud05-demo-7fcd87c8cc-h697q            Container started
+3m50s       Normal    Created                  pod/cloud05-demo-7fcd87c8cc-cl4tv            Container created
+3m50s       Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-cl4tv            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+3m50s       Normal    Started                  pod/cloud05-demo-7fcd87c8cc-cl4tv            Container started
+3m44s       Normal    Scheduled                pod/cloud05-demo-6b69945d-6476h              Successfully assigned cloud05/cloud05-demo-6b69945d-6476h to cloud05-control-plane
+3m44s       Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-6476h
+3m44s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled up replica set cloud05-demo-6b69945d from 0 to 1
+3m43s       Normal    Pulled                   pod/cloud05-demo-6b69945d-6476h              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+3m43s       Normal    Created                  pod/cloud05-demo-6b69945d-6476h              Container created
+3m43s       Normal    Started                  pod/cloud05-demo-6b69945d-6476h              Container started
+3m40s       Normal    Scheduled                pod/cloud05-demo-6b69945d-nbcfq              Successfully assigned cloud05/cloud05-demo-6b69945d-nbcfq to cloud05-control-plane
+3m40s       Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-cl4tv            Stopping container demo-service
+3m40s       Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-nbcfq
+3m11s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled down replica set cloud05-demo-7fcd87c8cc from 3 to 2
+3m40s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled up replica set cloud05-demo-6b69945d from 1 to 2
+3m40s       Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-cl4tv
+3m39s       Normal    Created                  pod/cloud05-demo-6b69945d-nbcfq              Container created
+3m39s       Normal    Pulled                   pod/cloud05-demo-6b69945d-nbcfq              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+3m39s       Normal    Started                  pod/cloud05-demo-6b69945d-nbcfq              Container started
+3m36s       Normal    Scheduled                pod/cloud05-demo-6b69945d-lftlc              Successfully assigned cloud05/cloud05-demo-6b69945d-lftlc to cloud05-control-plane
+3m36s       Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-s94jb
+3m36s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled up replica set cloud05-demo-6b69945d from 2 to 3
+3m36s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled down replica set cloud05-demo-7fcd87c8cc from 2 to 1
+3m36s       Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-lftlc
+3m36s       Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-s94jb            Stopping container demo-service
+3m35s       Normal    Started                  pod/cloud05-demo-6b69945d-lftlc              Container started
+3m35s       Normal    Pulled                   pod/cloud05-demo-6b69945d-lftlc              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+3m35s       Normal    Created                  pod/cloud05-demo-6b69945d-lftlc              Container created
+3m32s       Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-h697q            Stopping container demo-service
+3m32s       Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-h697q
+3m32s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled down replica set cloud05-demo-7fcd87c8cc from 1 to 0
+3m30s       Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-lftlc
+3m30s       Normal    Killing                  pod/cloud05-demo-6b69945d-lftlc              Stopping container demo-service
+3m30s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled down replica set cloud05-demo-6b69945d from 3 to 1
+3m29s       Normal    Started                  pod/cloud05-demo-6b69945d-sp26s              Container started
+3m29s       Normal    ScalingReplicaSet        deployment/cloud05-demo                      Scaled up replica set cloud05-demo-6b69945d from 1 to 3
+3m29s       Normal    Scheduled                pod/cloud05-demo-6b69945d-274rc              Successfully assigned cloud05/cloud05-demo-6b69945d-274rc to cloud05-control-plane
+3m29s       Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-274rc
+3m29s       Normal    Started                  pod/cloud05-demo-7fcd87c8cc-72blb            Container started
+3m29s       Normal    Created                  pod/cloud05-demo-6b69945d-sp26s              Container created
+3m29s       Normal    Pulled                   pod/cloud05-demo-6b69945d-sp26s              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+3m29s       Normal    Scheduled                pod/cloud05-demo-6b69945d-sp26s              Successfully assigned cloud05/cloud05-demo-6b69945d-sp26s to cloud05-control-plane
+3m29s       Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-sp26s
+3m30s       Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-nbcfq
+100s        Normal    ScalingReplicaSet        deployment/cloud05-demo                      (combined from similar events): Scaled down replica set cloud05-demo-7744b967bc from 2 to 1
+3m29s       Normal    Killing                  pod/cloud05-demo-6b69945d-nbcfq              Stopping container demo-service
+3m29s       Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-72blb            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-72blb to cloud05-control-plane
+3m29s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-72blb
+3m29s       Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-72blb            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+3m29s       Normal    Started                  pod/cloud05-demo-6b69945d-274rc              Container started
+3m29s       Normal    Created                  pod/cloud05-demo-6b69945d-274rc              Container created
+3m29s       Normal    Created                  pod/cloud05-demo-7fcd87c8cc-72blb            Container created
+3m29s       Normal    Pulled                   pod/cloud05-demo-6b69945d-274rc              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+3m25s       Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-94kqq            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-94kqq to cloud05-control-plane
+3m25s       Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-274rc
+3m25s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-94kqq
+3m24s       Normal    Killing                  pod/cloud05-demo-6b69945d-274rc              Stopping container demo-service
+3m24s       Normal    Created                  pod/cloud05-demo-7fcd87c8cc-94kqq            Container created
+3m24s       Normal    Started                  pod/cloud05-demo-7fcd87c8cc-94kqq            Container started
+3m24s       Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-94kqq            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+3m21s       Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-sp26s
+3m21s       Normal    Killing                  pod/cloud05-demo-6b69945d-sp26s              Stopping container demo-service
+3m21s       Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-phm8j            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-phm8j to cloud05-control-plane
+3m21s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-phm8j
+3m20s       Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-phm8j            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+3m20s       Normal    Created                  pod/cloud05-demo-7fcd87c8cc-phm8j            Container created
+3m20s       Normal    Started                  pod/cloud05-demo-7fcd87c8cc-phm8j            Container started
+3m17s       Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-6476h
+3m17s       Normal    Killing                  pod/cloud05-demo-6b69945d-6476h              Stopping container demo-service
+3m15s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7744b967bc           Created pod: cloud05-demo-7744b967bc-6qpbs
+3m15s       Normal    Scheduled                pod/cloud05-demo-7744b967bc-6qpbs            Successfully assigned cloud05/cloud05-demo-7744b967bc-6qpbs to cloud05-control-plane
+3m14s       Normal    Pulled                   pod/cloud05-demo-7744b967bc-6qpbs            Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+3m14s       Normal    Created                  pod/cloud05-demo-7744b967bc-6qpbs            Container created
+3m14s       Normal    Started                  pod/cloud05-demo-7744b967bc-6qpbs            Container started
+3m11s       Normal    SuccessfulCreate         replicaset/cloud05-demo-7744b967bc           Created pod: cloud05-demo-7744b967bc-n8nmr
+3m11s       Normal    Scheduled                pod/cloud05-demo-7744b967bc-n8nmr            Successfully assigned cloud05/cloud05-demo-7744b967bc-n8nmr to cloud05-control-plane
+3m11s       Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-phm8j
+3m11s       Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-phm8j            Stopping container demo-service
+3m10s       Normal    Pulled                   pod/cloud05-demo-7744b967bc-n8nmr            Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+3m10s       Normal    Created                  pod/cloud05-demo-7744b967bc-n8nmr            Container created
+3m10s       Normal    Started                  pod/cloud05-demo-7744b967bc-n8nmr            Container started
+3m7s        Normal    Scheduled                pod/cloud05-demo-7744b967bc-8gf8q            Successfully assigned cloud05/cloud05-demo-7744b967bc-8gf8q to cloud05-control-plane
+3m7s        Normal    SuccessfulCreate         replicaset/cloud05-demo-7744b967bc           Created pod: cloud05-demo-7744b967bc-8gf8q
+3m7s        Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-94kqq
+3m7s        Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-94kqq            Stopping container demo-service
+3m6s        Normal    Pulled                   pod/cloud05-demo-7744b967bc-8gf8q            Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+3m6s        Normal    Created                  pod/cloud05-demo-7744b967bc-8gf8q            Container created
+3m6s        Normal    Started                  pod/cloud05-demo-7744b967bc-8gf8q            Container started
+3m3s        Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-72blb            Stopping container demo-service
+3m3s        Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-72blb
+108s        Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-chzxl
+108s        Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-chzxl            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-chzxl to cloud05-control-plane
+108s        Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-chzxl            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+108s        Normal    Created                  pod/cloud05-demo-7fcd87c8cc-chzxl            Container created
+108s        Normal    Started                  pod/cloud05-demo-7fcd87c8cc-chzxl            Container started
+104s        Normal    Killing                  pod/cloud05-demo-7744b967bc-6qpbs            Stopping container demo-service
+104s        Normal    Created                  pod/cloud05-demo-7fcd87c8cc-gcqs6            Container created
+104s        Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-gcqs6            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-gcqs6 to cloud05-control-plane
+104s        Normal    SuccessfulDelete         replicaset/cloud05-demo-7744b967bc           Deleted pod: cloud05-demo-7744b967bc-6qpbs
+104s        Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-gcqs6
+104s        Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-gcqs6            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+104s        Normal    Started                  pod/cloud05-demo-7fcd87c8cc-gcqs6            Container started
+100s        Normal    Created                  pod/cloud05-demo-7fcd87c8cc-pv45r            Container created
+100s        Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           Created pod: cloud05-demo-7fcd87c8cc-pv45r
+100s        Normal    SuccessfulDelete         replicaset/cloud05-demo-7744b967bc           Deleted pod: cloud05-demo-7744b967bc-n8nmr
+100s        Normal    Killing                  pod/cloud05-demo-7744b967bc-n8nmr            Stopping container demo-service
+100s        Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-pv45r            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-pv45r to cloud05-control-plane
+100s        Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-pv45r            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+100s        Normal    Started                  pod/cloud05-demo-7fcd87c8cc-pv45r            Container started
+97s         Normal    SuccessfulDelete         replicaset/cloud05-demo-7744b967bc           Deleted pod: cloud05-demo-7744b967bc-8gf8q
+97s         Normal    Killing                  pod/cloud05-demo-7744b967bc-8gf8q            Stopping container demo-service
+93s         Normal    Started                  pod/cloud05-demo-6b69945d-4xw6k              Container started
+93s         Normal    Created                  pod/cloud05-demo-6b69945d-4xw6k              Container created
+93s         Normal    Pulled                   pod/cloud05-demo-6b69945d-4xw6k              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+93s         Normal    Scheduled                pod/cloud05-demo-6b69945d-4xw6k              Successfully assigned cloud05/cloud05-demo-6b69945d-4xw6k to cloud05-control-plane
+93s         Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-4xw6k
+89s         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-pv45r            Stopping container demo-service
+89s         Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-pv45r
+89s         Normal    Scheduled                pod/cloud05-demo-6b69945d-bpfdr              Successfully assigned cloud05/cloud05-demo-6b69945d-bpfdr to cloud05-control-plane
+89s         Normal    Pulled                   pod/cloud05-demo-6b69945d-bpfdr              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+89s         Normal    Created                  pod/cloud05-demo-6b69945d-bpfdr              Container created
+89s         Normal    Started                  pod/cloud05-demo-6b69945d-bpfdr              Container started
+89s         Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-bpfdr
+85s         Normal    Pulled                   pod/cloud05-demo-6b69945d-ztvhv              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+85s         Normal    Scheduled                pod/cloud05-demo-6b69945d-ztvhv              Successfully assigned cloud05/cloud05-demo-6b69945d-ztvhv to cloud05-control-plane
+85s         Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-gcqs6
+85s         Normal    Started                  pod/cloud05-demo-6b69945d-ztvhv              Container started
+85s         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-gcqs6            Stopping container demo-service
+85s         Normal    Created                  pod/cloud05-demo-6b69945d-ztvhv              Container created
+85s         Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-ztvhv
+81s         Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           Deleted pod: cloud05-demo-7fcd87c8cc-chzxl
+81s         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-chzxl            Stopping container demo-service
+79s         Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             Created pod: cloud05-demo-6b69945d-bbzq8
+79s         Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-ztvhv
+70s         Normal    SuccessfulCreate         replicaset/cloud05-demo-7fcd87c8cc           (combined from similar events): Created pod: cloud05-demo-7fcd87c8cc-dqj97
+79s         Normal    SuccessfulCreate         replicaset/cloud05-demo-6b69945d             (combined from similar events): Created pod: cloud05-demo-6b69945d-v95r4
+79s         Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-bpfdr
+79s         Normal    Killing                  pod/cloud05-demo-6b69945d-ztvhv              Stopping container demo-service
+79s         Normal    Killing                  pod/cloud05-demo-6b69945d-bpfdr              Stopping container demo-service
+79s         Normal    Scheduled                pod/cloud05-demo-6b69945d-v95r4              Successfully assigned cloud05/cloud05-demo-6b69945d-v95r4 to cloud05-control-plane
+79s         Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-k27zn            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-k27zn to cloud05-control-plane
+79s         Normal    Scheduled                pod/cloud05-demo-6b69945d-bbzq8              Successfully assigned cloud05/cloud05-demo-6b69945d-bbzq8 to cloud05-control-plane
+78s         Normal    Started                  pod/cloud05-demo-6b69945d-v95r4              Container started
+78s         Normal    Started                  pod/cloud05-demo-6b69945d-bbzq8              Container started
+78s         Normal    Pulled                   pod/cloud05-demo-6b69945d-bbzq8              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+78s         Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-k27zn            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+78s         Normal    Pulled                   pod/cloud05-demo-6b69945d-v95r4              Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+78s         Normal    Created                  pod/cloud05-demo-7fcd87c8cc-k27zn            Container created
+78s         Normal    Created                  pod/cloud05-demo-6b69945d-bbzq8              Container created
+78s         Normal    Created                  pod/cloud05-demo-6b69945d-v95r4              Container created
+78s         Normal    Started                  pod/cloud05-demo-7fcd87c8cc-k27zn            Container started
+74s         Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-kbg4k            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-kbg4k to cloud05-control-plane
+74s         Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-kbg4k            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+74s         Normal    Created                  pod/cloud05-demo-7fcd87c8cc-kbg4k            Container created
+74s         Normal    Started                  pod/cloud05-demo-7fcd87c8cc-kbg4k            Container started
+74s         Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-bbzq8
+73s         Normal    Killing                  pod/cloud05-demo-6b69945d-bbzq8              Stopping container demo-service
+70s         Normal    Started                  pod/cloud05-demo-7fcd87c8cc-dqj97            Container started
+70s         Normal    Scheduled                pod/cloud05-demo-7fcd87c8cc-dqj97            Successfully assigned cloud05/cloud05-demo-7fcd87c8cc-dqj97 to cloud05-control-plane
+70s         Normal    Killing                  pod/cloud05-demo-6b69945d-v95r4              Stopping container demo-service
+70s         Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             Deleted pod: cloud05-demo-6b69945d-v95r4
+70s         Normal    Created                  pod/cloud05-demo-7fcd87c8cc-dqj97            Container created
+70s         Normal    Pulled                   pod/cloud05-demo-7fcd87c8cc-dqj97            Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+66s         Normal    Killing                  pod/cloud05-demo-6b69945d-4xw6k              Stopping container demo-service
+66s         Normal    SuccessfulDelete         replicaset/cloud05-demo-6b69945d             (combined from similar events): Deleted pod: cloud05-demo-6b69945d-4xw6k
+64s         Normal    Pulled                   pod/cloud05-demo-7744b967bc-7jkzv            Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+64s         Normal    SuccessfulCreate         replicaset/cloud05-demo-7744b967bc           Created pod: cloud05-demo-7744b967bc-7jkzv
+64s         Normal    Scheduled                pod/cloud05-demo-7744b967bc-7jkzv            Successfully assigned cloud05/cloud05-demo-7744b967bc-7jkzv to cloud05-control-plane
+64s         Normal    Created                  pod/cloud05-demo-7744b967bc-7jkzv            Container created
+64s         Normal    Started                  pod/cloud05-demo-7744b967bc-7jkzv            Container started
+60s         Normal    Started                  pod/cloud05-demo-7744b967bc-6gqs7            Container started
+60s         Normal    Created                  pod/cloud05-demo-7744b967bc-6gqs7            Container created
+60s         Normal    Pulled                   pod/cloud05-demo-7744b967bc-6gqs7            Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+60s         Normal    Scheduled                pod/cloud05-demo-7744b967bc-6gqs7            Successfully assigned cloud05/cloud05-demo-7744b967bc-6gqs7 to cloud05-control-plane
+60s         Normal    SuccessfulCreate         replicaset/cloud05-demo-7744b967bc           Created pod: cloud05-demo-7744b967bc-6gqs7
+52s         Normal    SuccessfulDelete         replicaset/cloud05-demo-7fcd87c8cc           (combined from similar events): Deleted pod: cloud05-demo-7fcd87c8cc-k27zn
+60s         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-dqj97            Stopping container demo-service
+56s         Normal    Pulled                   pod/cloud05-demo-7744b967bc-bhch5            Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+56s         Normal    Scheduled                pod/cloud05-demo-7744b967bc-bhch5            Successfully assigned cloud05/cloud05-demo-7744b967bc-bhch5 to cloud05-control-plane
+56s         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-kbg4k            Stopping container demo-service
+56s         Normal    SuccessfulCreate         replicaset/cloud05-demo-7744b967bc           Created pod: cloud05-demo-7744b967bc-bhch5
+56s         Normal    Started                  pod/cloud05-demo-7744b967bc-bhch5            Container started
+56s         Normal    Created                  pod/cloud05-demo-7744b967bc-bhch5            Container created
+52s         Normal    Killing                  pod/cloud05-demo-7fcd87c8cc-k27zn            Stopping container demo-service
+46s         Normal    Killing                  pod/cloud05-demo-7744b967bc-6gqs7            Stopping container demo-service
+46s         Normal    Killing                  pod/cloud05-demo-7744b967bc-7jkzv            Stopping container demo-service
+46s         Normal    Killing                  pod/cloud05-demo-7744b967bc-bhch5            Stopping container demo-service
+45s         Normal    SuccessfulDelete         replicaset/cloud05-rollout-8cd557ccf         Deleted pod: cloud05-rollout-8cd557ccf-rq8q6
+45s         Normal    Scheduled                pod/cloud05-rollout-7b956d98b8-ksdhb         Successfully assigned cloud05/cloud05-rollout-7b956d98b8-ksdhb to cloud05-control-plane
+45s         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-6vgmk
+45s         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-4bghl
+45s         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-6vgmk          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-6vgmk to cloud05-control-plane
+45s         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-jvvmb
+45s         Normal    RolloutAddedToInformer   rollout/cloud05-rollout                      Rollout resource added to informer: cloud05/cloud05-rollout
+45s         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-rq8q6          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-rq8q6 to cloud05-control-plane
+45s         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-rq8q6          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+45s         Normal    Created                  pod/cloud05-rollout-8cd557ccf-rq8q6          Container created
+45s         Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled up ReplicaSet cloud05-rollout-7b956d98b8 (revision 2) from 0 to 1
+28s         Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled down ReplicaSet cloud05-rollout-8cd557ccf (revision 1) from 4 to 3
+45s         Normal    RolloutNotCompleted      rollout/cloud05-rollout                      Rollout not completed, started update to revision 2 (7b956d98b8)
+45s         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-rq8q6
+45s         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-jvvmb          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-jvvmb to cloud05-control-plane
+45s         Normal    Created                  pod/cloud05-rollout-8cd557ccf-4bghl          Container created
+45s         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-4bghl          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+45s         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-4bghl          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-4bghl to cloud05-control-plane
+45s         Normal    NewReplicaSetCreated     rollout/cloud05-rollout                      Created ReplicaSet cloud05-rollout-7b956d98b8 (revision 2)
+45s         Normal    SuccessfulCreate         replicaset/cloud05-rollout-7b956d98b8        Created pod: cloud05-rollout-7b956d98b8-ksdhb
+45s         Normal    RolloutUpdated           rollout/cloud05-rollout                      Rollout updated to revision 2
+45s         Normal    RolloutCompleted         rollout/cloud05-rollout                      Rollout completed update to revision 1 (8cd557ccf): Initial deploy
+45s         Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled up ReplicaSet cloud05-rollout-8cd557ccf (revision 1) from 0 to 4
+45s         Normal    RolloutNotCompleted      rollout/cloud05-rollout                      Rollout not completed, started update to revision 1 (8cd557ccf)
+45s         Normal    NewReplicaSetCreated     rollout/cloud05-rollout                      Created ReplicaSet cloud05-rollout-8cd557ccf (revision 1)
+45s         Normal    RolloutUpdated           rollout/cloud05-rollout                      Rollout updated to revision 1
+44s         Normal    Started                  pod/cloud05-rollout-8cd557ccf-4bghl          Container started
+44s         Normal    Started                  pod/cloud05-rollout-8cd557ccf-rq8q6          Container started
+44s         Normal    Started                  pod/cloud05-rollout-7b956d98b8-ksdhb         Container started
+44s         Normal    Created                  pod/cloud05-rollout-7b956d98b8-ksdhb         Container created
+44s         Normal    Pulled                   pod/cloud05-rollout-7b956d98b8-ksdhb         Container image "cloud05-demo:2.0.0" already present on machine and can be accessed by the pod
+44s         Normal    Created                  pod/cloud05-rollout-8cd557ccf-jvvmb          Container created
+44s         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-jvvmb          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+44s         Normal    Started                  pod/cloud05-rollout-8cd557ccf-jvvmb          Container started
+44s         Normal    Killing                  pod/cloud05-rollout-8cd557ccf-rq8q6          Stopping container demo-service
+44s         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-6vgmk          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+44s         Normal    Started                  pod/cloud05-rollout-8cd557ccf-6vgmk          Container started
+44s         Normal    Created                  pod/cloud05-rollout-8cd557ccf-6vgmk          Container created
+23s         Normal    RolloutStepCompleted     rollout/cloud05-rollout                      Rollout step 1/7 completed (setWeight: 25)
+23s         Normal    RolloutPaused            rollout/cloud05-rollout                      Rollout is paused (CanaryPauseStep)
+34s         Normal    AnalysisRunRunning       rollout/cloud05-rollout                      Step Analysis Run 'cloud05-rollout-7b956d98b8-2-2' Status New: 'Running' Previous: ''
+17s         Normal    RolloutStepCompleted     rollout/cloud05-rollout                      Rollout step 2/7 completed (pause: 6s)
+34s         Normal    RolloutResumed           rollout/cloud05-rollout                      Rollout is resumed
+30s         Warning   MetricFailed             analysisrun/cloud05-rollout-7b956d98b8-2-2   Metric 'success-rate' Completed. Result: Failed
+30s         Warning   AnalysisRunFailed        analysisrun/cloud05-rollout-7b956d98b8-2-2   Analysis Completed. Result: Failed
+30s         Warning   RolloutAborted           rollout/cloud05-rollout                      Rollout aborted update to revision 2: Step-based analysis phase error/failed: Metric "success-rate" assessed Failed due to failed (2) > failureLimit (1)
+30s         Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled up ReplicaSet cloud05-rollout-8cd557ccf (revision 1) from 3 to 4
+30s         Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled down ReplicaSet cloud05-rollout-7b956d98b8 (revision 2) from 1 to 0
+30s         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-t8kn4          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-t8kn4 to cloud05-control-plane
+30s         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-t8kn4          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod
+30s         Normal    Created                  pod/cloud05-rollout-8cd557ccf-t8kn4          Container created
+30s         Normal    Started                  pod/cloud05-rollout-8cd557ccf-t8kn4          Container started
+30s         Warning   AnalysisRunFailed        rollout/cloud05-rollout                      Step Analysis Run 'cloud05-rollout-7b956d98b8-2-2' Status New: 'Failed' Previous: 'Running'
+30s         Warning   MetricFailed             analysisrun/cloud05-rollout-7b956d98b8-2-2   Metric 'error-rate' Completed. Result: Failed
+30s         Normal    SuccessfulDelete         replicaset/cloud05-rollout-7b956d98b8        Deleted pod: cloud05-rollout-7b956d98b8-ksdhb
+30s         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-t8kn4
+30s         Normal    Killing                  pod/cloud05-rollout-7b956d98b8-ksdhb         Stopping container demo-service
+28s         Normal    ScalingReplicaSet        rollout/cloud05-rollout                      Scaled up ReplicaSet cloud05-rollout-59856cc485 (revision 3) from 0 to 1
+28s         Normal    Killing                  pod/cloud05-rollout-8cd557ccf-t8kn4          Stopping container demo-service
+28s         Normal    SuccessfulDelete         replicaset/cloud05-rollout-8cd557ccf         Deleted pod: cloud05-rollout-8cd557ccf-t8kn4
+28s         Normal    SuccessfulCreate         replicaset/cloud05-rollout-59856cc485        Created pod: cloud05-rollout-59856cc485-bb6s8
+28s         Normal    Scheduled                pod/cloud05-rollout-59856cc485-bb6s8         Successfully assigned cloud05/cloud05-rollout-59856cc485-bb6s8 to cloud05-control-plane
+28s         Normal    RolloutUpdated           rollout/cloud05-rollout                      Rollout updated to revision 3
+28s         Normal    NewReplicaSetCreated     rollout/cloud05-rollout                      Created ReplicaSet cloud05-rollout-59856cc485 (revision 3)
+27s         Normal    Started                  pod/cloud05-rollout-59856cc485-bb6s8         Container started
+27s         Normal    Created                  pod/cloud05-rollout-59856cc485-bb6s8         Container created
+27s         Normal    Pulled                   pod/cloud05-rollout-59856cc485-bb6s8         Container image "cloud05-demo:3.0.0" already present on machine and can be accessed by the pod
+13s         Normal    SuccessfulDelete         replicaset/cloud05-rollout-59856cc485        Deleted pod: cloud05-rollout-59856cc485-bb6s8
+13s         Warning   RolloutAborted           rollout/cloud05-rollout                      Rollout aborted update to revision 3: Step-based analysis phase error/failed: Metric "success-rate" assessed Failed due to failed (2) > failureLimit (1)
+13s         Normal    Killing                  pod/cloud05-rollout-59856cc485-bb6s8         Stopping container demo-service
+13s         Normal    Started                  pod/cloud05-rollout-8cd557ccf-pxmpj          Container started
+13s         Warning   AnalysisRunFailed        rollout/cloud05-rollout                      Step Analysis Run 'cloud05-rollout-59856cc485-3-2' Status New: 'Failed' Previous: 'Running'
+13s         Normal    Created                  pod/cloud05-rollout-8cd557ccf-pxmpj          Container created
+13s         Warning   AnalysisRunFailed        analysisrun/cloud05-rollout-59856cc485-3-2   Analysis Completed. Result: Failed
+13s         Warning   MetricFailed             analysisrun/cloud05-rollout-59856cc485-3-2   Metric 'error-rate' Completed. Result: Failed
+13s         Warning   MetricFailed             analysisrun/cloud05-rollout-59856cc485-3-2   Metric 'success-rate' Completed. Result: Failed
+13s         Normal    SuccessfulCreate         replicaset/cloud05-rollout-8cd557ccf         Created pod: cloud05-rollout-8cd557ccf-pxmpj
+13s         Normal    Scheduled                pod/cloud05-rollout-8cd557ccf-pxmpj          Successfully assigned cloud05/cloud05-rollout-8cd557ccf-pxmpj to cloud05-control-plane
+13s         Normal    Pulled                   pod/cloud05-rollout-8cd557ccf-pxmpj          Container image "cloud05-demo:1.0.0" already present on machine and can be accessed by the pod

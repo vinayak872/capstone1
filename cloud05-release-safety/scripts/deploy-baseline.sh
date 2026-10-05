@@ -9,6 +9,11 @@ echo "=========================================================="
 echo "  Deploying Baseline Deployment (RollingUpdate): v${TARGET_VERSION} "
 echo "=========================================================="
 
+if kubectl get rollout cloud05-rollout -n cloud05 >/dev/null 2>&1; then
+  echo "Deleting rollout to transition cleanly to Baseline Deployment..."
+  kubectl delete rollout cloud05-rollout -n cloud05 --ignore-not-found=true
+fi
+
 echo "Updating deployment image to cloud05-demo:${TARGET_VERSION}..."
 kubectl apply -f "${BASE_DIR}/namespace.yaml"
 kubectl apply -f "${BASE_DIR}/configmap.yaml"

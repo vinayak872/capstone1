@@ -1,0 +1,2 @@
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES               SELECTOR
+local-git-server   1/1     1            1           18m   git-http     alpine/git:v2.45.2   app=local-git-server

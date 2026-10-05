@@ -1,0 +1,22 @@
+{
+  "experiment_id": "exp_02_baseline_faulty",
+  "timestamp": "2026-10-05T19:22:46.822364+00:00",
+  "git_commit": "57f82b36206b65e83e91c4e2766632b5c36b614a",
+  "deployment_mode": "baseline",
+  "old_version": "2.0.0",
+  "new_version": "3.0.0",
+  "failure_mode": "error",
+  "failure_rate": 0.75,
+  "total_requests": 76,
+  "error_count": 40,
+  "error_rate": 52.63,
+  "p50_latency": 5.04,
+  "p95_latency": 27.51,
+  "p99_latency": 4002.51,
+  "detection_time_ms": 8988.72,
+  "rollback_time_ms": 0.0,
+  "recovery_time_ms": 3323.68,
+  "rollback_success": false,
+  "final_version": "3.0.0",
+  "result": "DEGRADED_UNPROTECTED"
+}

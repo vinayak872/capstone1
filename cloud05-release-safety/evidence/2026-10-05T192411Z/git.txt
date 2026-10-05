@@ -1,0 +1,8 @@
+commit 57f82b36206b65e83e91c4e2766632b5c36b614a
+Author: CLOUD-05 DevOps Engineer <cloud05-team@capstone.local>
+Date:   Tue Oct 6 00:49:18 2026 +0530
+
+    fix(analysis): filter probe endpoints in PromQL to prevent error-rate dilution
+
+ cloud05-release-safety/gitops/rollout/analysis-template.yaml | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)

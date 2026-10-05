@@ -17,6 +17,7 @@ Measures and records:
 import os
 import sys
 import json
+import csv
 import time
 import urllib.request
 import urllib.error
@@ -24,7 +25,7 @@ import subprocess
 import statistics
 import datetime
 
-TARGET_URL = os.environ.get("TARGET_URL", "http://localhost:8080")
+TARGET_URL = os.environ.get("TARGET_URL", "http://localhost:8088")
 PROMETHEUS_URL = os.environ.get("PROMETHEUS_URL", "http://localhost:9090")
 RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
 os.makedirs(RESULTS_DIR, exist_ok=True)

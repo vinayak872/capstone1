@@ -1,0 +1,32 @@
+NAME              DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+cloud05-rollout   4         4                      4           64s
+Name:            cloud05-rollout
+Namespace:       cloud05
+Status:          ✖ Degraded
+Message:         RolloutAborted: Rollout aborted update to revision 3: Step-based analysis phase error/failed: Metric "success-rate" assessed Failed due to failed (2) > failureLimit (1)
+Strategy:        Canary
+  Step:          0/7
+  SetWeight:     0
+  ActualWeight:  0
+Images:          cloud05-demo:1.0.0 (stable)
+Replicas:
+  Desired:       4
+  Current:       4
+  Updated:       0
+  Ready:         4
+  Available:     4
+
+NAME                                        KIND         STATUS        AGE  INFO
+⟳ cloud05-rollout                           Rollout      ✖ Degraded    64s  
+├──# revision:3                                                             
+│  ├──⧉ cloud05-rollout-59856cc485          ReplicaSet   • ScaledDown  39s  canary
+│  └──α cloud05-rollout-59856cc485-3-2      AnalysisRun  ✖ Failed      29s  ✖ 4
+├──# revision:2                                                             
+│  ├──⧉ cloud05-rollout-7b956d98b8          ReplicaSet   • ScaledDown  60s  
+│  └──α cloud05-rollout-7b956d98b8-2-2      AnalysisRun  ✖ Failed      49s  ✖ 4
+└──# revision:1                                                             
+   └──⧉ cloud05-rollout-8cd557ccf           ReplicaSet   ✔ Healthy     64s  stable
+      ├──□ cloud05-rollout-8cd557ccf-8phbn  Pod          ✔ Running     64s  ready:1/1
+      ├──□ cloud05-rollout-8cd557ccf-gbdzs  Pod          ✔ Running     64s  ready:1/1
+      ├──□ cloud05-rollout-8cd557ccf-krx56  Pod          ✔ Running     64s  ready:1/1
+      └──□ cloud05-rollout-8cd557ccf-bp2kx  Pod          ✔ Running     25s  ready:1/1

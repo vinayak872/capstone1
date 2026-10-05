@@ -1,0 +1,4 @@
+NAME                     TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE   SELECTOR
+cloud05-canary-service   ClusterIP   10.96.51.133    <none>        80/TCP         16m   app=cloud05-demo
+cloud05-service          NodePort    10.96.69.13     <none>        80:30080/TCP   17m   app=cloud05-demo
+local-git-server         ClusterIP   10.96.233.144   <none>        9418/TCP       18m   app=local-git-server

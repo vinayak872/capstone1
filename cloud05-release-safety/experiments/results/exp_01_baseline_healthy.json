@@ -1,0 +1,22 @@
+{
+  "experiment_id": "exp_01_baseline_healthy",
+  "timestamp": "2026-10-05T19:22:26.434121+00:00",
+  "git_commit": "57f82b36206b65e83e91c4e2766632b5c36b614a",
+  "deployment_mode": "baseline",
+  "old_version": "1.0.0",
+  "new_version": "2.0.0",
+  "failure_mode": "none",
+  "failure_rate": 0.0,
+  "total_requests": 51,
+  "error_count": 3,
+  "error_rate": 5.88,
+  "p50_latency": 5.5,
+  "p95_latency": 4002.16,
+  "p99_latency": 4002.96,
+  "detection_time_ms": 0.0,
+  "rollback_time_ms": 0.0,
+  "recovery_time_ms": 0.0,
+  "rollback_success": false,
+  "final_version": "2.0.0",
+  "result": "SUCCESS"
+}

@@ -1,0 +1,5 @@
+experiment_id,timestamp,git_commit,deployment_mode,old_version,new_version,failure_mode,failure_rate,total_requests,error_count,error_rate,p50_latency,p95_latency,p99_latency,detection_time_ms,rollback_time_ms,recovery_time_ms,rollback_success,final_version,result
+exp_01_baseline_healthy,2026-10-05T19:22:26.434121+00:00,57f82b36206b65e83e91c4e2766632b5c36b614a,baseline,1.0.0,2.0.0,none,0.0,51,3,5.88,5.5,4002.16,4002.96,0.0,0.0,0.0,False,2.0.0,SUCCESS
+exp_02_baseline_faulty,2026-10-05T19:22:46.822364+00:00,57f82b36206b65e83e91c4e2766632b5c36b614a,baseline,2.0.0,3.0.0,error,0.75,76,40,52.63,5.04,27.51,4002.51,8988.72,0.0,3323.68,False,3.0.0,DEGRADED_UNPROTECTED
+exp_03_progressive_healthy,2026-10-05T19:23:12.496248+00:00,57f82b36206b65e83e91c4e2766632b5c36b614a,progressive,1.0.0,2.0.0,none,0.0,126,0,0.0,5.07,7.69,10.49,0.0,0.0,0.0,False,1.0.0,SUCCESS
+exp_04_progressive_faulty,2026-10-05T19:23:32.820559+00:00,57f82b36206b65e83e91c4e2766632b5c36b614a,progressive,2.0.0,3.0.0,error,0.75,127,11,8.66,4.8,8.51,22.38,5746.17,0.0,14710.25,False,1.0.0,DEGRADED

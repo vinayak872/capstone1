@@ -11,6 +11,8 @@ echo "=========================================================="
 echo "    CLOUD-05 CAPSTONE: AUTOMATED EXPERIMENT MATRIX        "
 echo "=========================================================="
 
+"${SCRIPT_DIR}/ensure-service-port.sh" 8088
+
 echo "[1/4] Running Experiment 1: Baseline Healthy Release (v1.0.0 -> v2.0.0)..."
 "${SCRIPT_DIR}/deploy-baseline.sh" "1.0.0"
 python3 "${EXP_PY}" --id "exp_01_baseline_healthy" --mode "baseline" --old-version "1.0.0" --new-version "2.0.0" --failure-mode "none"
