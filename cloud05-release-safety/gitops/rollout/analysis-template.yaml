@@ -8,28 +8,28 @@ spec:
     - name: success-rate
       interval: 4s
       count: 2
-      successCondition: result[0] >= 85
+      successCondition: result[0] >= 90
       failureLimit: 1
       provider:
         prometheus:
           address: http://prometheus-server.monitoring.svc.cluster.local:9090
           query: |
             (
-              sum(increase(http_requests_total{status_code!~"5..", namespace="cloud05"}[1m]))
+              sum(increase(http_requests_total{route!~"/health|/ready|/metrics", status_code!~"5..", namespace="cloud05"}[1m]))
               /
-              (sum(increase(http_requests_total{namespace="cloud05"}[1m])) > 0)
+              (sum(increase(http_requests_total{route!~"/health|/ready|/metrics", namespace="cloud05"}[1m])) > 0)
             ) * 100 or vector(100)
     - name: error-rate
       interval: 4s
       count: 2
-      successCondition: result[0] <= 15
+      successCondition: result[0] <= 10
       failureLimit: 1
       provider:
         prometheus:
           address: http://prometheus-server.monitoring.svc.cluster.local:9090
           query: |
             (
-              sum(increase(http_requests_total{status_code=~"5..", namespace="cloud05"}[1m]))
+              sum(increase(http_requests_total{route!~"/health|/ready|/metrics", status_code=~"5..", namespace="cloud05"}[1m]))
               /
-              (sum(increase(http_requests_total{namespace="cloud05"}[1m])) > 0)
+              (sum(increase(http_requests_total{route!~"/health|/ready|/metrics", namespace="cloud05"}[1m])) > 0)
             ) * 100 or vector(0)
