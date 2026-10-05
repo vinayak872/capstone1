@@ -6,7 +6,8 @@ metadata:
 spec:
   metrics:
     - name: success-rate
-      interval: 5s
+      interval: 4s
+      count: 2
       successCondition: result[0] >= 85
       failureLimit: 1
       provider:
@@ -14,12 +15,13 @@ spec:
           address: http://prometheus-server.monitoring.svc.cluster.local:9090
           query: |
             (
-              sum(rate(http_requests_total{status_code!~"5..", namespace="cloud05"}[1m]))
+              sum(increase(http_requests_total{status_code!~"5..", namespace="cloud05"}[1m]))
               /
-              (sum(rate(http_requests_total{namespace="cloud05"}[1m])) > 0)
+              (sum(increase(http_requests_total{namespace="cloud05"}[1m])) > 0)
             ) * 100 or vector(100)
     - name: error-rate
-      interval: 5s
+      interval: 4s
+      count: 2
       successCondition: result[0] <= 15
       failureLimit: 1
       provider:
@@ -27,7 +29,7 @@ spec:
           address: http://prometheus-server.monitoring.svc.cluster.local:9090
           query: |
             (
-              sum(rate(http_requests_total{status_code=~"5..", namespace="cloud05"}[1m]))
+              sum(increase(http_requests_total{status_code=~"5..", namespace="cloud05"}[1m]))
               /
-              (sum(rate(http_requests_total{namespace="cloud05"}[1m])) > 0)
+              (sum(increase(http_requests_total{namespace="cloud05"}[1m])) > 0)
             ) * 100 or vector(0)
