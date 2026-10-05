@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: local-git-server
+  namespace: cloud05
+  labels:
+    app: local-git-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: local-git-server
+  template:
+    metadata:
+      labels:
+        app: local-git-server
+    spec:
+      containers:
+        - name: git-http
+          image: alpine/git:v2.45.2
+          command:
+            - /bin/sh
+            - -c
+            - |
+              apk add --no-cache git-daemon
+              mkdir -p /git/cloud05-gitops.git
+              cd /git/cloud05-gitops.git
+              git init --bare --initial-branch=main
+              git config http.receivepack true
+              echo "Starting git daemon server on port 9418..."
+              git daemon --reuseaddr --base-path=/git --export-all --enable=receive-pack --listen=0.0.0.0 --port=9418 /git
+          ports:
+            - containerPort: 9418
+              name: git
+          volumeMounts:
+            - name: git-storage
+              mountPath: /git
+      volumes:
+        - name: git-storage
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: local-git-server
+  namespace: cloud05
+spec:
+  type: ClusterIP
+  ports:
+    - name: git
+      port: 9418
+      targetPort: 9418
+  selector:
+    app: local-git-server
