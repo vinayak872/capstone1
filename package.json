@@ -1,0 +1,16 @@
+{
+  "name": "capstone1",
+  "version": "1.0.0",
+  "description": "CLOUD-05 — GitOps CI/CD with Progressive Delivery and Automated Rollback",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "concurrently -k -p \"[{name}]\" -n \"BACKEND,DASHBOARD\" -c \"cyan,magenta\" \"npm --prefix backend start\" \"npm --prefix cloud05-dashboard dev\"",
+    "backend": "npm --prefix backend start",
+    "dashboard": "npm --prefix cloud05-dashboard dev",
+    "test": "npm --prefix backend test",
+    "build": "npm --prefix cloud05-dashboard build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
