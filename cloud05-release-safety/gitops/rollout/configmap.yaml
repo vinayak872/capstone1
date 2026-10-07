@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cloud05-config
+  namespace: cloud05
+data:
+  PORT: "8080"
+  ENVIRONMENT: "demo"
+  FAILURE_MODE: "none"
+  FAILURE_ERROR_RATE: "1.0"
+  FAILURE_LATENCY_MS: "1500"

@@ -6,38 +6,38 @@ ROLLOUT_DIR="${SCRIPT_DIR}/../gitops/rollout"
 TARGET_VERSION="${1:-1.0.0}"
 
 echo "=========================================================="
-echo "  Deploying Progressive Delivery (Argo Rollouts): v${TARGET_VERSION} "
+echo "  Deploying Progressive Delivery via GitOps & Argo CD     "
+echo "  Target Release Candidate: v${TARGET_VERSION}            "
 echo "=========================================================="
 
-# Remove baseline deployment if exists to prevent selector collisions
+# 1. Ensure baseline deployment is removed if present to prevent port/selector collisions
 if kubectl get deployment cloud05-demo -n cloud05 >/dev/null 2>&1; then
-  echo "Scaling down baseline deployment to transition to Rollout..."
+  echo "Decommissioning baseline deployment to allow Rollout to serve traffic..."
   kubectl delete deployment cloud05-demo -n cloud05 --ignore-not-found=true
 fi
 
-# Reset rollout if exists to start fresh
-if kubectl get rollout cloud05-rollout -n cloud05 >/dev/null 2>&1; then
-  echo "Resetting previous rollout to start with a fresh revision..."
-  kubectl delete rollout cloud05-rollout -n cloud05 --ignore-not-found=true
-fi
-
-echo "Applying Rollout and Analysis manifests..."
-kubectl apply -f "${ROLLOUT_DIR}/services.yaml"
-kubectl apply -f "${ROLLOUT_DIR}/analysis-template.yaml"
-kubectl apply -f "${ROLLOUT_DIR}/rollout.yaml"
-
-export PATH="/opt/homebrew/bin:/Users/vinayakkumar/.local/bin:$PATH"
-
-echo "Setting Rollout image to cloud05-demo:${TARGET_VERSION}..."
-if command -v kubectl-argo-rollouts >/dev/null 2>&1; then
-  kubectl argo rollouts set image cloud05-rollout demo-service="cloud05-demo:${TARGET_VERSION}" -n cloud05 || true
+# 2. Update desired state in GitOps manifest
+echo "Updating GitOps desired state manifest (gitops/rollout/rollout.yaml)..."
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  sed -i '' -E "s/image: cloud05-demo:[0-9]+\.[0-9]+\.[0-9]+/image: cloud05-demo:${TARGET_VERSION}/" "${ROLLOUT_DIR}/rollout.yaml"
 else
-  kubectl patch rollout cloud05-rollout -n cloud05 --type merge \
-    -p "{\"spec\":{\"template\":{\"spec\":{\"containers\":[{\"name\":\"demo-service\",\"image\":\"cloud05-demo:${TARGET_VERSION}\"}]}}}}"
+  sed -i -E "s/image: cloud05-demo:[0-9]+\.[0-9]+\.[0-9]+/image: cloud05-demo:${TARGET_VERSION}/" "${ROLLOUT_DIR}/rollout.yaml"
 fi
 
-echo "Rollout updated. Current Rollout status:"
-kubectl argo rollouts status cloud05-rollout -n cloud05 --timeout=90s || true
-kubectl get rollout cloud05-rollout -n cloud05
-kubectl get pods -l app=cloud05-demo -n cloud05
+# 3. Synchronize change to GitOps repository and trigger Argo CD reconciliation
+echo "Committing desired state change to GitOps repository and notifying Argo CD..."
+"${SCRIPT_DIR}/sync-gitops.sh" "deploy(progressive): update image to cloud05-demo:${TARGET_VERSION}"
+
+# 4. Monitor Argo Rollouts progression
+export PATH="/opt/homebrew/bin:/Users/vinayakkumar/.local/bin:$PATH"
+echo "Observing Rollout status in Kubernetes..."
+if command -v kubectl-argo-rollouts >/dev/null 2>&1; then
+  kubectl argo rollouts status cloud05-rollout -n cloud05 --timeout=90s || true
+  kubectl argo rollouts get rollout cloud05-rollout -n cloud05 || true
+else
+  kubectl rollout status rollout/cloud05-rollout -n cloud05 --timeout=90s || true
+fi
+
+echo "=========================================================="
+echo "  Progressive delivery deployment initiated via GitOps!   "
 echo "=========================================================="

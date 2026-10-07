@@ -83,12 +83,12 @@ export default function Evidence() {
           id: 'prometheus_telemetry',
           name: 'Prometheus Telemetry & SLI Sampling',
           source: 'Prometheus HTTP API (v1/query)',
-          status: metricsRes.data?.connected ? 'VERIFIED' : 'OFFLINE',
+          status: metricsRes.data?.source === 'prometheus' ? 'VERIFIED' : 'OFFLINE',
           timestamp: metricsRes.data?.timestamp || new Date().toISOString(),
-          value: metricsRes.data?.connected
-            ? `Request Rate: ${metricsRes.data.metrics?.requestRate?.value} req/s | Error Rate: ${metricsRes.data.metrics?.errorRate?.value}% | P95: ${metricsRes.data.metrics?.p95Latency?.value}ms`
+          value: metricsRes.data?.source === 'prometheus'
+            ? `Request Rate: ${metricsRes.data.requestRate ?? '0.00'} req/s | Error Rate: ${metricsRes.data.errorRate ?? '0.00'}% | P95: ${metricsRes.data.p95Latency ?? '0.0'}ms`
             : 'Prometheus scraper unavailable',
-          command: 'curl -s "http://localhost:9090/api/v1/query?query=sum(rate(http_requests_total[2m]))"',
+          command: 'curl -s "http://localhost:9090/api/v1/query?query=sum(rate(http_requests_total[1m]))"',
           apiEndpoint: 'GET /api/metrics/current',
           rawRef: 'http://localhost:9090',
         },
@@ -98,21 +98,21 @@ export default function Evidence() {
           source: 'Pod Spec & Microservice /version',
           status: releaseRes.data?.connected ? 'VERIFIED' : 'OFFLINE',
           timestamp: releaseRes.data?.timestamp || new Date().toISOString(),
-          value: `Active: ${releaseRes.data?.currentVersion} (Pods: ${releaseRes.data?.totalReplicas}) | Stable: ${releaseRes.data?.stable}`,
+          value: `Active: ${releaseRes.data?.currentVersion || 'unknown'} (Pods: ${releaseRes.data?.totalReplicas ?? 0}) | Stable: ${releaseRes.data?.stable || 'unknown'}`,
           command: 'kubectl get pods -n cloud05 -o jsonpath="{.items[*].spec.containers[*].image}"',
           apiEndpoint: 'GET /api/releases/current',
-          rawRef: releaseRes.data?.pods?.[0]?.image || 'docker.io/library/cloud05-demo:1.0.0',
+          rawRef: releaseRes.data?.pods?.[0]?.image || 'cloud05-demo:1.0.0',
         },
         {
           id: 'git_commit',
           name: 'GitOps Repository Revision Baseline',
           source: 'Git Subsystem',
-          status: 'VERIFIED',
+          status: gitopsRes.data?.revision ? 'VERIFIED' : 'PENDING',
           timestamp: new Date().toISOString(),
-          value: `Revision: ${gitopsRes.data?.revision || '57f82b36206b65e83e91c4e2766632b5c36b614a'}`,
+          value: `Revision: ${gitopsRes.data?.revision || 'Not yet committed'}`,
           command: 'git rev-parse HEAD',
           apiEndpoint: 'GET /api/gitops/status',
-          rawRef: 'branch: main',
+          rawRef: `branch: ${gitopsRes.data?.targetRevision || 'main'}`,
         },
       ];
 

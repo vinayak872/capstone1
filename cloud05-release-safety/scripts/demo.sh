@@ -88,8 +88,8 @@ pause
 
 echo ""
 echo ">>> STEP 6: Deploying Faulty Version 3.0.0 through Progressive Delivery (Argo Rollouts)"
-echo "Initiating progressive canary rollout of v3.0.0 with automated Prometheus health analysis..."
-kubectl argo rollouts set image cloud05-rollout demo-service=cloud05-demo:3.0.0 -n cloud05
+echo "Initiating progressive canary rollout of v3.0.0 via GitOps commit and Argo CD sync..."
+"${SCRIPT_DIR}/deploy-progressive.sh" "3.0.0"
 
 echo "Generating user workload during canary evaluation..."
 python3 -c "

@@ -8,7 +8,7 @@
     "backend": "npm --prefix backend start",
     "dashboard": "npm --prefix cloud05-dashboard dev",
     "test": "npm --prefix backend test",
-    "build": "npm --prefix cloud05-dashboard build"
+    "build": "npm --prefix cloud05-dashboard run build"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

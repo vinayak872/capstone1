@@ -1,7 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-
-const CAPSTONE_ROOT = path.resolve(process.cwd(), '../cloud05-release-safety');
+import { CAPSTONE_ROOT } from '../utils/pathResolver.js';
 const RESULTS_DIR = path.join(CAPSTONE_ROOT, 'experiments/results');
 
 class ExperimentService {

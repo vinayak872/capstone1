@@ -33,10 +33,10 @@ export default function Dashboard() {
   const [lastUpdated, setLastUpdated] = useState(null);
 
   // Live Infrastructure Telemetry State
-  const [cluster, setCluster] = useState({ connected: true, pods: { desired: 3, ready: 3 } });
-  const [release, setRelease] = useState({ currentVersion: 'v1.0.0', stable: 'v1.0.0', canary: null, pods: [] });
-  const [gitops, setGitops] = useState({ syncStatus: 'Synced', healthStatus: 'Healthy', revision: 'main' });
-  const [rollout, setRollout] = useState({ phase: 'Healthy', rolloutState: 'STABLE', canaryWeight: 0, stablePercent: 100, canaryPercent: 0 });
+  const [cluster, setCluster] = useState({ connected: false, pods: { desired: 0, ready: 0 } });
+  const [release, setRelease] = useState({ currentVersion: 'Connecting...', stable: 'Connecting...', canary: null, pods: [] });
+  const [gitops, setGitops] = useState({ syncStatus: 'Connecting...', healthStatus: 'Connecting...', revision: '' });
+  const [rollout, setRollout] = useState({ phase: 'Connecting...', rolloutState: 'Connecting...', canaryWeight: 0, stablePercent: 100, canaryPercent: 0 });
   const [metrics, setMetrics] = useState({ requestRate: 0, errorRate: 0, p95Latency: 0, availability: 100 });
 
   // Reviewer Demo State

@@ -40,7 +40,12 @@ kubectl apply -f "${SCRIPT_DIR}/../gitops/argocd/git-server.yaml"
 kubectl rollout status deployment/local-git-server -n cloud05 --timeout=90s
 
 echo ""
-echo "STEP 9: Deploying Baseline Release v1.0.0..."
+echo "STEP 9: Initializing GitOps Repository & Argo CD Application..."
+"${SCRIPT_DIR}/sync-gitops.sh" "feat: initial gitops desired state manifests"
+kubectl apply -f "${SCRIPT_DIR}/../gitops/argocd/application.yaml"
+
+echo ""
+echo "STEP 10: Deploying Baseline Release v1.0.0..."
 "${SCRIPT_DIR}/deploy-baseline.sh" "1.0.0"
 
 echo ""

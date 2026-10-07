@@ -13,13 +13,16 @@ export default function RolloutStatus({ rolloutData }) {
   } = rolloutData;
 
   const isRolledBack = rolloutState === 'ROLLED_BACK' || rolloutState === 'ROLLED BACK';
+  const isHealthy = rolloutState === 'HEALTHY' || rolloutState === 'STABLE';
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-      {/* Automatic Rollback Alert Banner */}
+      {/* Dynamic Rollout Health / Rollback Banner */}
       <div style={{
-        background: 'linear-gradient(90deg, rgba(239, 68, 68, 0.12) 0%, rgba(15, 23, 42, 0.8) 100%)',
-        border: '1px solid var(--status-red-border)',
+        background: isRolledBack
+          ? 'linear-gradient(90deg, rgba(239, 68, 68, 0.12) 0%, rgba(15, 23, 42, 0.8) 100%)'
+          : 'linear-gradient(90deg, rgba(16, 185, 129, 0.12) 0%, rgba(15, 23, 42, 0.8) 100%)',
+        border: `1px solid ${isRolledBack ? 'var(--status-red-border)' : 'var(--status-green-border)'}`,
         borderRadius: '10px',
         padding: '24px',
         display: 'flex',
@@ -29,22 +32,22 @@ export default function RolloutStatus({ rolloutData }) {
         <div style={{
           padding: '12px',
           borderRadius: '8px',
-          backgroundColor: 'rgba(239, 68, 68, 0.2)',
-          color: 'var(--status-red)',
+          backgroundColor: isRolledBack ? 'rgba(239, 68, 68, 0.2)' : 'rgba(16, 185, 129, 0.2)',
+          color: isRolledBack ? 'var(--status-red)' : 'var(--status-green)',
           flexShrink: 0
         }}>
-          <RotateCcw size={28} />
+          {isRolledBack ? <RotateCcw size={28} /> : <CheckCircle size={28} />}
         </div>
 
         <div style={{ flex: 1 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.01em' }}>
-              AUTOMATIC ROLLBACK TRIGGERED
+              {isRolledBack ? 'AUTOMATIC ROLLBACK TRIGGERED' : 'PROGRESSIVE ROLLOUT: HEALTHY & STABLE'}
             </h2>
-            <span className="badge badge-red">
+            <span className={`badge ${isRolledBack ? 'badge-red' : (isHealthy ? 'badge-green' : 'badge-blue')}`}>
               STATUS: {isRolledBack ? 'ROLLED BACK' : rolloutState}
             </span>
-            <DataSourceBadge source="PROTOTYPE" label="PROTOTYPE ROLLOUT STATE" />
+            <DataSourceBadge source="LIVE" label="ARGO ROLLOUTS CRD" />
           </div>
 
           <p style={{
@@ -53,7 +56,7 @@ export default function RolloutStatus({ rolloutData }) {
             marginTop: '8px',
             lineHeight: 1.6
           }}>
-            <strong style={{ color: '#ffffff' }}>Trigger Diagnostic:</strong> {statusMessage}
+            <strong style={{ color: '#ffffff' }}>Diagnostic Message:</strong> {statusMessage}
           </p>
 
           <div style={{
@@ -62,14 +65,14 @@ export default function RolloutStatus({ rolloutData }) {
             alignItems: 'center',
             gap: '24px',
             paddingTop: '16px',
-            borderTop: '1px solid rgba(239, 68, 68, 0.2)',
+            borderTop: `1px solid ${isRolledBack ? 'rgba(239, 68, 68, 0.2)' : 'rgba(16, 185, 129, 0.2)'}`,
             fontSize: '13px',
             flexWrap: 'wrap'
           }}>
             <div>
-              <span style={{ color: 'var(--text-muted)' }}>Faulty Target: </span>
-              <span style={{ color: 'var(--status-red)', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
-                {currentRelease || 'v3.0.0'}
+              <span style={{ color: 'var(--text-muted)' }}>{isRolledBack ? 'Faulty Candidate: ' : 'Active Target: '}</span>
+              <span style={{ color: isRolledBack ? 'var(--status-red)' : 'var(--status-blue)', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
+                {currentRelease || 'unknown'}
               </span>
             </div>
 
@@ -78,14 +81,14 @@ export default function RolloutStatus({ rolloutData }) {
             <div>
               <span style={{ color: 'var(--text-muted)' }}>Preserved Stable Version: </span>
               <span style={{ color: 'var(--status-green)', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
-                {stableVersion || 'v2.0.0'}
+                {stableVersion || 'unknown'}
               </span>
             </div>
 
             <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '6px' }}>
               <ShieldCheck size={16} color="var(--status-green)" />
               <span style={{ color: 'var(--status-green)', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>
-                Recovery Mechanism: {rollbackResult || 'SUCCESS'}
+                Verification: {isRolledBack ? (rollbackResult || 'RECOVERED') : 'STABLE ACTIVE'}
               </span>
             </div>
           </div>
@@ -96,7 +99,7 @@ export default function RolloutStatus({ rolloutData }) {
       <div className="card">
         <div className="card-title">
           <span>Argo Rollouts Step Pipeline Evaluation Model</span>
-          <DataSourceBadge source="PROTOTYPE" label="PROTOTYPE ROLLOUT STATE" />
+          <DataSourceBadge source="LIVE" label="ARGO ROLLOUTS CRD" />
         </div>
 
         <div style={{

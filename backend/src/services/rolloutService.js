@@ -2,10 +2,9 @@ import rolloutsIntegration from '../integrations/rollouts.js';
 import prometheusIntegration from '../integrations/prometheus.js';
 import { exec } from 'child_process';
 import { promisify } from 'util';
-import path from 'path';
+import { CAPSTONE_ROOT } from '../utils/pathResolver.js';
 
 const execAsync = promisify(exec);
-const CAPSTONE_ROOT = path.resolve(process.cwd(), '../cloud05-release-safety');
 
 class RolloutService {
   async getStatus() {

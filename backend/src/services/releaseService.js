@@ -33,7 +33,7 @@ class ReleaseService {
       const versionsFound = new Set();
       const podDetails = appPods.map(pod => {
         const cStatus = pod.status?.containerStatuses?.[0];
-        const image = cStatus?.image || pod.spec?.containers?.[0]?.image || '';
+        const image = pod.spec?.containers?.[0]?.image || cStatus?.image || '';
         const tagMatch = image.match(/:([^:]+)$/);
         const tag = tagMatch ? tagMatch[1] : (directApp?.version || '1.0.0');
 
@@ -94,6 +94,11 @@ class ReleaseService {
       const rsList = await k8sClient.getReplicaSets(K8S_NAMESPACE);
       const cloud05RS = rsList.filter(rs => rs.metadata.name.includes('cloud05-rollout'));
 
+      const [analysisRuns, rollout] = await Promise.all([
+        k8sClient.listCustomResources('argoproj.io', 'v1alpha1', K8S_NAMESPACE, 'analysisruns').catch(() => []),
+        k8sClient.getCustomResource('argoproj.io', 'v1alpha1', K8S_NAMESPACE, 'rollouts', 'cloud05-rollout').catch(() => null),
+      ]);
+
       const history = cloud05RS.map((rs, idx) => {
         const image = rs.spec?.template?.spec?.containers?.[0]?.image || '';
         const tagMatch = image.match(/:([^:]+)$/);
@@ -101,18 +106,29 @@ class ReleaseService {
         const replicas = rs.status?.replicas || 0;
         const readyReplicas = rs.status?.readyReplicas || 0;
         const revision = rs.metadata.annotations?.['rollout.argoproj.io/revision'] || `${cloud05RS.length - idx}`;
+        const podHash = rs.metadata.labels?.['rollouts-pod-template-hash'] || '';
+
+        // Check for any failed analysis run corresponding to this RS/revision
+        const failedRun = analysisRuns.find(ar => {
+          const arRev = ar.metadata?.annotations?.['rollout.argoproj.io/revision'];
+          const arHash = ar.metadata?.labels?.['rollouts-pod-template-hash'];
+          const isPhaseFailed = ar.status?.phase === 'Failed' || ar.status?.phase === 'Error';
+          return isPhaseFailed && (arRev === revision || (podHash && arHash === podHash));
+        });
 
         let status = 'SCALED_DOWN';
-        let result = 'SUPERCEDED';
+        let result = 'SUPERSEDED';
         let rollbackReason = null;
 
         if (replicas > 0 && readyReplicas > 0) {
           status = 'STABLE';
           result = 'ACTIVE_PRODUCTION';
-        } else if (version === 'v3.0.0') {
+        } else if (failedRun) {
           status = 'ROLLED BACK';
           result = 'AUTOMATED ROLLBACK';
-          rollbackReason = 'AnalysisRun error-rate breached threshold (>5%). Automated rollback aborted candidate and restored stable revision.';
+          const failedMetric = failedRun.status?.metricResults?.find(m => m.phase === 'Failed');
+          const metricDetail = failedMetric ? ` Metric '${failedMetric.name}' failed threshold condition.` : '';
+          rollbackReason = `AnalysisRun ${failedRun.metadata.name} failed.${metricDetail} Automated rollback aborted candidate and preserved stable revision.`;
         }
 
         return {
@@ -121,7 +137,7 @@ class ReleaseService {
           version,
           status,
           result,
-          strategy: 'Canary Progressive (10% → 25% → 50% → 100%)',
+          strategy: 'Canary Progressive (25% → 50% → 100%)',
           replicas,
           readyReplicas,
           image,

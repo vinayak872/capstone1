@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
     targetRevision: main
-    path: gitops/base
+    path: gitops/rollout
   destination:
     server: https://kubernetes.default.svc
     namespace: cloud05

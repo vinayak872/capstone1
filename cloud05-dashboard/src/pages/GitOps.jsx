@@ -5,15 +5,15 @@ import { getGitOpsStatus, getGitOpsDrift } from '../services/api';
 
 export default function GitOps() {
   const [gitops, setGitops] = useState({
-    connected: true,
+    connected: false,
     application: 'cloud05-app',
     namespace: 'argocd',
     repoURL: 'git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git',
     targetRevision: 'main',
-    syncStatus: 'Synced',
-    healthStatus: 'Healthy',
-    revision: 'main',
-    git: { shortCommit: 'e4898d3', branch: 'main' }
+    syncStatus: 'Connecting...',
+    healthStatus: 'Connecting...',
+    revision: '',
+    git: { shortCommit: '', branch: 'main' }
   });
 
   const [drift, setDrift] = useState({
