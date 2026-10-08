@@ -1,0 +1,49 @@
+=== ARGO ROLLOUTS VERIFICATION ===
+Timestamp: 2026-10-08T05:35:52Z
+[PASS] Argo Rollouts Controller active: argo-rollouts-78d84ff54d-sjbq2
+[PASS] Rollout CRD registered
+[PASS] Rollout cloud05-rollout exists. Phase=Degraded, Image=cloud05-demo:2.0.0, Hash=7b956d98b8
+[PASS] Canary strategy steps verified: 3 weight steps, 2 inline analysis steps
+
+=== KUBECTL ARGO ROLLOUTS GET ROLLOUT ===
+Name:            cloud05-rollout
+Namespace:       cloud05
+Status:          ✖ Degraded
+Message:         RolloutAborted: Rollout aborted update to revision 12: Step-based analysis phase error/failed: Metric "success-rate" assessed Failed due to failed (2) > failureLimit (1)
+Strategy:        Canary
+  Step:          0/7
+  SetWeight:     0
+  ActualWeight:  0
+Images:          cloud05-demo:3.0.0 (stable)
+Replicas:
+  Desired:       4
+  Current:       4
+  Updated:       0
+  Ready:         4
+  Available:     4
+
+NAME                                         KIND         STATUS        AGE  INFO
+⟳ cloud05-rollout                            Rollout      ✖ Degraded    44h  
+├──# revision:12                                                             
+│  ├──⧉ cloud05-rollout-7b956d98b8           ReplicaSet   • ScaledDown  44h  canary
+│  ├──α cloud05-rollout-7b956d98b8-12-2      AnalysisRun  ✖ Failed      11h  ✖ 4
+│  └──α cloud05-rollout-7b956d98b8-12-2.1    AnalysisRun  ✖ Failed      11h  ✖ 4
+├──# revision:11                                                             
+│  ├──⧉ cloud05-rollout-59856cc485           ReplicaSet   ✔ Healthy     44h  stable
+│  │  ├──□ cloud05-rollout-59856cc485-mk6wd  Pod          ✔ Running     11h  ready:1/1,restarts:1
+│  │  ├──□ cloud05-rollout-59856cc485-vzq9t  Pod          ✔ Running     11h  ready:1/1,restarts:1
+│  │  ├──□ cloud05-rollout-59856cc485-gcq5r  Pod          ✔ Running     11h  ready:1/1,restarts:1
+│  │  └──□ cloud05-rollout-59856cc485-69qzw  Pod          ✔ Running     11h  ready:1/1,restarts:1
+│  ├──α cloud05-rollout-59856cc485-11-2      AnalysisRun  ✔ Successful  11h  ✔ 4
+│  └──α cloud05-rollout-59856cc485-11-5      AnalysisRun  ✔ Successful  11h  ✔ 4
+├──# revision:10                                                             
+│  ├──α cloud05-rollout-7b956d98b8-10-2      AnalysisRun  ✔ Successful  41h  ✔ 4
+│  └──α cloud05-rollout-7b956d98b8-10-5      AnalysisRun  ✔ Successful  41h  ✔ 4
+├──# revision:9                                                              
+│  ├──⧉ cloud05-rollout-74848cc7df           ReplicaSet   • ScaledDown  41h  
+│  └──α cloud05-rollout-74848cc7df-9-5       AnalysisRun  ✔ Successful  41h  ✔ 4
+├──# revision:5                                                              
+│  └──⧉ cloud05-rollout-7f499db4d8           ReplicaSet   • ScaledDown  42h  
+└──# revision:1                                                              
+   └──⧉ cloud05-rollout-8cd557ccf            ReplicaSet   • ScaledDown  44h  
+

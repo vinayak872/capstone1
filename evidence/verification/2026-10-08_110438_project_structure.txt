@@ -1,0 +1,59 @@
+=== CLOUD-05 PROJECT STRUCTURE VERIFICATION ===
+Executed at: 2026-10-08T05:34:38Z
+Repo Root: /Users/vinayakkumar/Desktop/capstone1
+
+[PASS] Directory exists: cloud05-release-safety
+[PASS] Directory exists: cloud05-dashboard
+[PASS] Directory exists: backend
+[PASS] Directory exists: scripts
+[PASS] Directory exists: cloud05-release-safety/scripts
+[PASS] Directory exists: cloud05-release-safety/experiments
+[PASS] Directory exists: cloud05-release-safety/evidence
+[PASS] Directory exists: cloud05-release-safety/gitops
+[PASS] Directory exists: cloud05-release-safety/infrastructure
+[PASS] Directory exists: cloud05-release-safety/monitoring
+[PASS] Directory exists: .github/workflows
+[PASS] File exists: README.md
+[PASS] File exists: Makefile
+[PASS] File exists: package.json
+[PASS] File exists: FINAL_VALIDATION.md
+[PASS] File exists: cloud05-release-safety/Makefile
+[PASS] File exists: cloud05-release-safety/README.md
+
+=== REPOSITORY TREE SUMMARY ===
+/Users/vinayakkumar/Desktop/capstone1
+/Users/vinayakkumar/Desktop/capstone1/evidence
+/Users/vinayakkumar/Desktop/capstone1/evidence/verification
+/Users/vinayakkumar/Desktop/capstone1/Makefile
+/Users/vinayakkumar/Desktop/capstone1/backend
+/Users/vinayakkumar/Desktop/capstone1/backend/test
+/Users/vinayakkumar/Desktop/capstone1/backend/package-lock.json
+/Users/vinayakkumar/Desktop/capstone1/backend/package.json
+/Users/vinayakkumar/Desktop/capstone1/backend/src
+/Users/vinayakkumar/Desktop/capstone1/cloud05-dashboard
+/Users/vinayakkumar/Desktop/capstone1/cloud05-dashboard/index.html
+/Users/vinayakkumar/Desktop/capstone1/cloud05-dashboard/dist
+/Users/vinayakkumar/Desktop/capstone1/cloud05-dashboard/vite.config.js
+/Users/vinayakkumar/Desktop/capstone1/cloud05-dashboard/package-lock.json
+/Users/vinayakkumar/Desktop/capstone1/cloud05-dashboard/package.json
+/Users/vinayakkumar/Desktop/capstone1/cloud05-dashboard/src
+/Users/vinayakkumar/Desktop/capstone1/README.md
+/Users/vinayakkumar/Desktop/capstone1/package-lock.json
+/Users/vinayakkumar/Desktop/capstone1/package.json
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/app
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/evidence
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/Makefile
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/experiments
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/docs
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/README.md
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/scripts
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/FINAL_VALIDATION.md
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/gitops
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/monitoring
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/infrastructure
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/reports
+/Users/vinayakkumar/Desktop/capstone1/scripts
+/Users/vinayakkumar/Desktop/capstone1/scripts/verification
+/Users/vinayakkumar/Desktop/capstone1/FINAL_VALIDATION.md
+

@@ -1,0 +1,6 @@
+=== NT-2: METRIC SELECTION & FAIL-CLOSED GUARDRAILS VERIFICATION ===
+Timestamp: 2026-10-08T05:36:01Z
+[PASS] Strict failure threshold enforced: failureLimit=1
+[PASS] System fails closed when metrics fail evaluation: Metric "success-rate" assessed Failed due to failed (2) > failureLimit (1)
+[PASS] PromQL safe fallback verified: prevents NaN anomalies during cold starts
+

@@ -1,0 +1,15 @@
+=== DOCKER & CONTAINER VERIFICATION ===
+Timestamp: 2026-10-08T05:35:44Z
+[PASS] Dockerfile exists: /Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/app/Dockerfile
+Dockerfile summary: 39 lines
+Base Image: FROM node:20-alpine AS base
+User: USER node
+[PASS] Docker image present: cloud05-demo:1.0.0 (776a99274e86, 228MB)
+[PASS] Docker image present: cloud05-demo:2.0.0 (e7eb0922eb74, 228MB)
+[PASS] Docker image present: cloud05-demo:3.0.0 (a574e9411110, 228MB)
+[PASS] docker inspect valid. Architecture: arm64, OS: linux, User: node
+[PASS] Image cloud05-demo:1.0.0 is cached in Kind node cloud05-control-plane
+[PASS] Image cloud05-demo:2.0.0 is cached in Kind node cloud05-control-plane
+[PASS] Image cloud05-demo:3.0.0 is cached in Kind node cloud05-control-plane
+[PASS] Standalone container execution succeeded. Health response: {"status":"healthy","alive":true,"version":"1.0.0","timestamp":"2026-10-08T05:35:48.315Z","hostname":"419fde92fded"}
+

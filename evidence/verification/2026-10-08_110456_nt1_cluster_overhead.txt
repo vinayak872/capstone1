@@ -1,0 +1,10 @@
+=== NT-1: CLUSTER OPERATIONAL OVERHEAD VERIFICATION ===
+Timestamp: 2026-10-08T05:34:56Z
+[PASS] Controller resources statically defined
+[PASS] Pod resource ceiling enforced to prevent cluster exhaustion: cpu=50m, mem=64Mi
+
+=== RESIDUAL RISK & OVERHEAD SUMMARY ===
+1. AnalysisTemplate polling interval: 4s with 2 samples = 8s analysis window.
+2. Prometheus query load: Evaluates lightweight 1-minute vector metrics; minimal CPU footprint.
+3. Rollout Replica scaling overhead: Step weights (25%, 50%) maintain pod replica count between 4 and 5; within cluster capacity.
+

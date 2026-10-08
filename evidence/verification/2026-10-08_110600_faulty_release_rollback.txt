@@ -1,0 +1,118 @@
+=== FAULTY RELEASE & AUTOMATIC ROLLBACK VERIFICATION ===
+Timestamp: 2026-10-08T05:36:00Z
+[PASS] Live Rollout aborted due to canary degradation: Rollout aborted update to revision 12: Step-based analysis phase error/failed: Metric "success-rate" assessed Failed due to failed (2) > failureLimit (1)
+[PASS] AnalysisRun cloud05-rollout-7b956d98b8-12-2 caught anomaly: metric=error-rate success-rate, failedCount=2
+AnalysisRun Detail:
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisRun
+metadata:
+  annotations:
+    rollout.argoproj.io/revision: "12"
+  creationTimestamp: "2026-10-07T18:15:56Z"
+  generation: 3
+  labels:
+    app: cloud05-demo
+    rollout-type: Step
+    rollouts-pod-template-hash: 7b956d98b8
+    step-index: "2"
+  name: cloud05-rollout-7b956d98b8-12-2
+  namespace: cloud05
+  ownerReferences:
+  - apiVersion: argoproj.io/v1alpha1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Rollout
+    name: cloud05-rollout
+    uid: c9492e66-8f3f-4927-9bb0-153a53f98173
+  resourceVersion: "39539"
+  uid: ef9dd94e-faea-4793-b4c5-9f77b3675cf7
+spec:
+  metrics:
+  - count: 2
+    failureLimit: 1
+    interval: 4s
+    name: success-rate
+    provider:
+      prometheus:
+        address: http://prometheus-server.monitoring.svc.cluster.local:9090
+        authentication:
+          oauth2: {}
+          sigv4: {}
+        query: |
+          (
+            sum(increase(http_requests_total{route!~"/health|/ready|/metrics", status_code!~"5..", namespace="cloud05"}[1m]))
+            /
+            (sum(increase(http_requests_total{route!~"/health|/ready|/metrics", namespace="cloud05"}[1m])) > 0)
+          ) * 100 or vector(100)
+    successCondition: result[0] >= 90
+  - count: 2
+    failureLimit: 1
+    interval: 4s
+    name: error-rate
+    provider:
+      prometheus:
+        address: http://prometheus-server.monitoring.svc.cluster.local:9090
+        authentication:
+          oauth2: {}
+          sigv4: {}
+        query: |
+          (
+            sum(increase(http_requests_total{route!~"/health|/ready|/metrics", status_code=~"5..", namespace="cloud05"}[1m]))
+            /
+            (sum(increase(http_requests_total{route!~"/health|/ready|/metrics", namespace="cloud05"}[1m])) > 0)
+          ) * 100 or vector(0)
+    successCondition: result[0] <= 10
+status:
+  completedAt: "2026-10-07T18:16:00Z"
+  dryRunSummary: {}
+  message: Metric "success-rate" assessed Failed due to failed (2) > failureLimit
+    (1)
+  metricResults:
+  - count: 2
+    failed: 2
+    measurements:
+    - finishedAt: "2026-10-07T18:15:56Z"
+      phase: Failed
+      startedAt: "2026-10-07T18:15:56Z"
+      value: '[65.40757619652089]'
+    - finishedAt: "2026-10-07T18:16:00Z"
+      phase: Failed
+      startedAt: "2026-10-07T18:16:00Z"
+      value: '[86.19818191795787]'
+    metadata:
+      ResolvedPrometheusQuery: |
+        (
+          sum(increase(http_requests_total{route!~"/health|/ready|/metrics", status_code=~"5..", namespace="cloud05"}[1m]))
+          /
+          (sum(increase(http_requests_total{route!~"/health|/ready|/metrics", namespace="cloud05"}[1m])) > 0)
+        ) * 100 or vector(0)
+    name: error-rate
+    phase: Failed
+  - count: 2
+    failed: 2
+    measurements:
+    - finishedAt: "2026-10-07T18:15:56Z"
+      phase: Failed
+      startedAt: "2026-10-07T18:15:56Z"
+      value: '[34.5924238034791]'
+    - finishedAt: "2026-10-07T18:16:00Z"
+      phase: Failed
+      startedAt: "2026-10-07T18:16:00Z"
+      value: '[13.801818082042141]'
+    metadata:
+      ResolvedPrometheusQuery: |
+        (
+          sum(increase(http_requests_total{route!~"/health|/ready|/metrics", status_code!~"5..", namespace="cloud05"}[1m]))
+          /
+          (sum(increase(http_requests_total{route!~"/health|/ready|/metrics", namespace="cloud05"}[1m])) > 0)
+        ) * 100 or vector(100)
+    name: success-rate
+    phase: Failed
+  phase: Failed
+  runSummary:
+    count: 2
+    failed: 2
+  startedAt: "2026-10-07T18:15:56Z"
+[PASS] ReplicaSets cleanly partitioned: Canary replicas=0, Stable readyReplicas=4
+[PASS] Empirical rollback metrics: detection=5746.17ms, recovery=14710.25ms, error_rate=8.66%
+

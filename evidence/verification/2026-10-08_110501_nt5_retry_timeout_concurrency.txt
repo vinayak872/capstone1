@@ -1,0 +1,10 @@
+=== NT-5: CONCURRENCY, TIMEOUT & IDEMPOTENCY VERIFICATION ===
+Timestamp: 2026-10-08T05:35:01Z
+Note: CLOUD-05 demo microservice is an idempotent, stateless REST service.
+This test verifies HTTP concurrency integrity, request isolation, and timeout resilience.
+Executing burst of 50 concurrent GET requests to http://localhost:8080/...
+[PASS] All 50 concurrent requests completed successfully (0 drops)
+[PASS] Health probe responded cleanly within 2s constraint
+Verifying idempotent response consistency across multiple cluster pods...
+[PASS] Consistent version payload across requests: "version":"3.0.0"
+

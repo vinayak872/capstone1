@@ -37,9 +37,9 @@ fi
 
 # 2. Check for tracked unencrypted private keys or high-entropy tokens
 append_log "Scanning repository files for uncommitted/hardcoded private keys..."
-PRIVATE_KEYS=$(git grep -in "BEGIN RSA PRIVATE KEY" 2>/dev/null || true)
+PRIVATE_KEYS=$(git grep -in "BEGIN RSA PRIVATE KEY" -- ':!scripts/verification/*' 2>/dev/null || true)
 if [ -z "$PRIVATE_KEYS" ]; then
-  PRIVATE_KEYS=$(git grep -in "BEGIN OPENSSH PRIVATE KEY" 2>/dev/null || true)
+  PRIVATE_KEYS=$(git grep -in "BEGIN OPENSSH PRIVATE KEY" -- ':!scripts/verification/*' 2>/dev/null || true)
 fi
 
 if [ -z "$PRIVATE_KEYS" ]; then

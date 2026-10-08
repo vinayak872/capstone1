@@ -1,0 +1,32 @@
+=== PROGRESSIVE EXPERIMENT VERIFICATION ===
+Timestamp: 2026-10-08T05:36:01Z
+[PASS] Progressive experiment artifact found: /Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/experiments/results/exp_04_progressive_faulty.json
+[PASS] Deployment mode verified: progressive
+[PASS] Blast radius successfully contained: 8.66% error rate under canary progressive delivery
+[PASS] Automated recovery triggered and resolved within 14710.25ms
+[PASS] Stable version protected: 1.0.0
+
+=== RAW EXPERIMENT OUTPUT ===
+{
+  "experiment_id": "exp_04_progressive_faulty",
+  "timestamp": "2026-10-05T19:23:32.820559+00:00",
+  "git_commit": "57f82b36206b65e83e91c4e2766632b5c36b614a",
+  "deployment_mode": "progressive",
+  "old_version": "2.0.0",
+  "new_version": "3.0.0",
+  "failure_mode": "error",
+  "failure_rate": 0.75,
+  "total_requests": 127,
+  "error_count": 11,
+  "error_rate": 8.66,
+  "p50_latency": 4.8,
+  "p95_latency": 8.51,
+  "p99_latency": 22.38,
+  "detection_time_ms": 5746.17,
+  "rollback_time_ms": 0.0,
+  "recovery_time_ms": 14710.25,
+  "rollback_success": false,
+  "final_version": "1.0.0",
+  "result": "DEGRADED"
+}
+

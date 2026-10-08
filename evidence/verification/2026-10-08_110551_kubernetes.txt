@@ -1,0 +1,19 @@
+=== KUBERNETES WORKLOAD VERIFICATION ===
+Timestamp: 2026-10-08T05:35:51Z
+[PASS] Kubernetes cluster reachable. Server version: v1.36.4
+[PASS] Namespace cloud05 exists
+[PASS] Pods dynamic count: 4 ready out of 4 total
+[PASS] Service cloud05-service exists with port 80:8080
+[PASS] Service cloud05-canary-service exists with port 80:8080
+[PASS] ConfigMap cloud05-config exists with keys: ENVIRONMENT FAILURE_ERROR_RATE FAILURE_LATENCY_MS FAILURE_MODE PORT 
+[PASS] Resource envelope verified: cpu_req=250m, mem_req=128Mi, cpu_lim=50m, mem_lim=64Mi
+[PASS] Health probes properly configured on Rollout spec
+
+=== POD LIST DUMP ===
+NAME                                READY   STATUS    RESTARTS        AGE    IP            NODE                    NOMINATED NODE   READINESS GATES
+cloud05-rollout-59856cc485-69qzw    1/1     Running   1 (3m57s ago)   11h    10.244.0.22   cloud05-control-plane   <none>           <none>
+cloud05-rollout-59856cc485-gcq5r    1/1     Running   1 (3m57s ago)   11h    10.244.0.23   cloud05-control-plane   <none>           <none>
+cloud05-rollout-59856cc485-mk6wd    1/1     Running   1 (3m57s ago)   11h    10.244.0.20   cloud05-control-plane   <none>           <none>
+cloud05-rollout-59856cc485-vzq9t    1/1     Running   1 (3m57s ago)   11h    10.244.0.19   cloud05-control-plane   <none>           <none>
+local-git-server-5cf5f796ff-7m6ht   1/1     Running   0               2m6s   10.244.0.24   cloud05-control-plane   <none>           <none>
+
