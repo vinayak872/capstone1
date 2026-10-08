@@ -1,0 +1,9 @@
+=== BACKEND SERVER VERIFICATION ===
+Timestamp: 2026-10-07T20:06:16Z
+[PASS] Backend API online at http://localhost:3001
+[PASS] Integrations status: {"backend":true,"kubernetes":true,"argocd":true,"prometheus":true,"rollouts":true,"timestamp":"2026-10-07T20:06:16.299Z","details":{"kubernetes":{"context":"kind-cloud05","error":null},"argocd":{"app":"cloud05-app","sync":"Synced","health":"Degraded"},"prometheus":{"version":"2.54.1","error":null},"rollouts":{"phase":"Degraded","target":"v2.0.0"},"backend":{"endpoint":"http://localhost:8080","reachable":true}}}
+[PASS] /api/releases/history returned 5 revisions (source=kubernetes)
+[PASS] /api/rollout/status: phase=Degraded, target=v2.0.0
+[PASS] /api/gitops/status: syncStatus=Synced
+[PASS] /api/experiments returned 4 items
+

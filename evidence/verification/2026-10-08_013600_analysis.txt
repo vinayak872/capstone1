@@ -1,0 +1,184 @@
+=== ANALYSISTEMPLATE & ANALYSISRUN VERIFICATION ===
+Timestamp: 2026-10-07T20:06:00Z
+[PASS] AnalysisTemplate success-rate-analysis found
+[PASS] Metrics: success-rate error-rate, interval: 4s, failureLimit: 1
+Prometheus Address: http://prometheus-server.monitoring.svc.cluster.local:9090
+[PASS] Success Condition: result[0] >= 90
+
+=== ANALYSISTEMPLATE YAML ===
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  annotations:
+    argocd.argoproj.io/tracking-id: cloud05-app:argoproj.io/AnalysisTemplate:cloud05/success-rate-analysis
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"argoproj.io/v1alpha1","kind":"AnalysisTemplate","metadata":{"annotations":{"argocd.argoproj.io/tracking-id":"cloud05-app:argoproj.io/AnalysisTemplate:cloud05/success-rate-analysis"},"name":"success-rate-analysis","namespace":"cloud05"},"spec":{"metrics":[{"count":2,"failureLimit":1,"interval":"4s","name":"success-rate","provider":{"prometheus":{"address":"http://prometheus-server.monitoring.svc.cluster.local:9090","query":"(
+  sum(increase(http_requests_total{route!~\"/health|/ready|/metrics\", status_code!~\"5..\", namespace=\"cloud05\"}[1m]))
+  /
+  (sum(increase(http_requests_total{route!~\"/health|/ready|/metrics\", namespace=\"cloud05\"}[1m])) \u003e 0)
+) * 100 or vector(100)
+"}},"successCondition":"result[0] \u003e= 90"},{"count":2,"failureLimit":1,"interval":"4s","name":"error-rate","provider":{"prometheus":{"address":"http://prometheus-server.monitoring.svc.cluster.local:9090","query":"(
+  sum(increase(http_requests_total{route!~\"/health|/ready|/metrics\", status_code=~\"5..\", namespace=\"cloud05\"}[1m]))
+  /
+  (sum(increase(http_requests_total{route!~\"/health|/ready|/metrics\", namespace=\"cloud05\"}[1m])) \u003e 0)
+) * 100 or vector(0)
+"}},"successCondition":"result[0] \u003c= 10"}]}}
+  creationTimestamp: "2026-10-05T19:11:58Z"
+  generation: 11
+  name: success-rate-analysis
+  namespace: cloud05
+  resourceVersion: "38640"
+  uid: 0af78bb8-a0ef-40e1-83fd-96f00292ab96
+spec:
+  metrics:
+  - count: 2
+    failureLimit: 1
+    interval: 4s
+    name: success-rate
+    provider:
+      prometheus:
+        address: http://prometheus-server.monitoring.svc.cluster.local:9090
+        query: |
+          (
+            sum(increase(http_requests_total{route!~"/health|/ready|/metrics", status_code!~"5..", namespace="cloud05"}[1m]))
+            /
+            (sum(increase(http_requests_total{route!~"/health|/ready|/metrics", namespace="cloud05"}[1m])) > 0)
+          ) * 100 or vector(100)
+    successCondition: result[0] >= 90
+  - count: 2
+    failureLimit: 1
+    interval: 4s
+    name: error-rate
+    provider:
+      prometheus:
+        address: http://prometheus-server.monitoring.svc.cluster.local:9090
+        query: |
+          (
+            sum(increase(http_requests_total{route!~"/health|/ready|/metrics", status_code=~"5..", namespace="cloud05"}[1m]))
+            /
+            (sum(increase(http_requests_total{route!~"/health|/ready|/metrics", namespace="cloud05"}[1m])) > 0)
+          ) * 100 or vector(0)
+    successCondition: result[0] <= 10
+[PASS] AnalysisRuns present: 7 runs (5 successful, 2 failed)
+
+=== ANALYSISRUNS LIST ===
+cloud05-rollout-59856cc485-11-2     Successful   111m
+cloud05-rollout-59856cc485-11-5     Successful   110m
+cloud05-rollout-74848cc7df-9-5      Successful   32h
+cloud05-rollout-7b956d98b8-10-2     Successful   32h
+cloud05-rollout-7b956d98b8-10-5     Successful   32h
+cloud05-rollout-7b956d98b8-12-2     Failed       110m
+cloud05-rollout-7b956d98b8-12-2.1   Failed       109m
+
+=== LATEST ANALYSISRUN YAML (cloud05-rollout-7b956d98b8-12-2.1) ===
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisRun
+metadata:
+  annotations:
+    rollout.argoproj.io/revision: "12"
+  creationTimestamp: "2026-10-07T18:16:38Z"
+  generation: 3
+  labels:
+    app: cloud05-demo
+    rollout-type: Step
+    rollouts-pod-template-hash: 7b956d98b8
+    step-index: "2"
+  name: cloud05-rollout-7b956d98b8-12-2.1
+  namespace: cloud05
+  ownerReferences:
+  - apiVersion: argoproj.io/v1alpha1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Rollout
+    name: cloud05-rollout
+    uid: c9492e66-8f3f-4927-9bb0-153a53f98173
+  resourceVersion: "39732"
+  uid: d0f8d657-a810-4c41-a4b7-063a5bf3addb
+spec:
+  metrics:
+  - count: 2
+    failureLimit: 1
+    interval: 4s
+    name: success-rate
+    provider:
+      prometheus:
+        address: http://prometheus-server.monitoring.svc.cluster.local:9090
+        authentication:
+          oauth2: {}
+          sigv4: {}
+        query: |
+          (
+            sum(increase(http_requests_total{route!~"/health|/ready|/metrics", status_code!~"5..", namespace="cloud05"}[1m]))
+            /
+            (sum(increase(http_requests_total{route!~"/health|/ready|/metrics", namespace="cloud05"}[1m])) > 0)
+          ) * 100 or vector(100)
+    successCondition: result[0] >= 90
+  - count: 2
+    failureLimit: 1
+    interval: 4s
+    name: error-rate
+    provider:
+      prometheus:
+        address: http://prometheus-server.monitoring.svc.cluster.local:9090
+        authentication:
+          oauth2: {}
+          sigv4: {}
+        query: |
+          (
+            sum(increase(http_requests_total{route!~"/health|/ready|/metrics", status_code=~"5..", namespace="cloud05"}[1m]))
+            /
+            (sum(increase(http_requests_total{route!~"/health|/ready|/metrics", namespace="cloud05"}[1m])) > 0)
+          ) * 100 or vector(0)
+    successCondition: result[0] <= 10
+status:
+  completedAt: "2026-10-07T18:16:42Z"
+  dryRunSummary: {}
+  message: Metric "success-rate" assessed Failed due to failed (2) > failureLimit
+    (1)
+  metricResults:
+  - count: 2
+    failed: 2
+    measurements:
+    - finishedAt: "2026-10-07T18:16:38Z"
+      phase: Failed
+      startedAt: "2026-10-07T18:16:38Z"
+      value: '[79.75239863851772]'
+    - finishedAt: "2026-10-07T18:16:42Z"
+      phase: Failed
+      startedAt: "2026-10-07T18:16:42Z"
+      value: '[79.49640808126745]'
+    metadata:
+      ResolvedPrometheusQuery: |
+        (
+          sum(increase(http_requests_total{route!~"/health|/ready|/metrics", status_code=~"5..", namespace="cloud05"}[1m]))
+          /
+          (sum(increase(http_requests_total{route!~"/health|/ready|/metrics", namespace="cloud05"}[1m])) > 0)
+        ) * 100 or vector(0)
+    name: error-rate
+    phase: Failed
+  - count: 2
+    failed: 2
+    measurements:
+    - finishedAt: "2026-10-07T18:16:38Z"
+      phase: Failed
+      startedAt: "2026-10-07T18:16:38Z"
+      value: '[20.247601361482285]'
+    - finishedAt: "2026-10-07T18:16:42Z"
+      phase: Failed
+      startedAt: "2026-10-07T18:16:42Z"
+      value: '[20.503591918732564]'
+    metadata:
+      ResolvedPrometheusQuery: |
+        (
+          sum(increase(http_requests_total{route!~"/health|/ready|/metrics", status_code!~"5..", namespace="cloud05"}[1m]))
+          /
+          (sum(increase(http_requests_total{route!~"/health|/ready|/metrics", namespace="cloud05"}[1m])) > 0)
+        ) * 100 or vector(100)
+    name: success-rate
+    phase: Failed
+  phase: Failed
+  runSummary:
+    count: 2
+    failed: 2
+  startedAt: "2026-10-07T18:16:38Z"
+

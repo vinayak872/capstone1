@@ -1,0 +1,7 @@
+=== NT-3: ROLLBACK CORRECTNESS & REPLICA PARTITIONING VERIFICATION ===
+Timestamp: 2026-10-07T20:06:09Z
+[PASS] Rollout verified in aborted state
+[PASS] All canary pods cleanly destroyed; no orphaned candidate workloads
+[PASS] Stable ReplicaSet preserved: 4 active pods
+[PASS] Service endpoints verified clean of candidate pods
+

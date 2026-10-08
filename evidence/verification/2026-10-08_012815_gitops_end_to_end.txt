@@ -1,0 +1,119 @@
+=== GITOPS END-TO-END RECONCILIATION VERIFICATION ===
+Timestamp: 2026-10-07T19:58:15Z
+[PASS] Initial Argo CD Revision: 63740d1f8300d7471d1704457456b7151a6fc60f
+Applying test probe to ConfigMap: verif-1791403095
+Pushing desired-state change via /Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/scripts/sync-gitops.sh...
+==========================================================
+  GITOPS DESIRED-STATE SYNCHRONIZATION                    
+==========================================================
+Commit message: test(gitops): verify automated reconciliation verif-1791403095
+deployment "local-git-server" successfully rolled out
+Connecting to in-cluster Git server...
+Cloning into '/var/folders/00/_yqm0h3n1z9fdpdcxq3gg2vh0000gn/T/tmp.Sx74iUsid3'...
+Transfer starting: 24 files
+./
+argocd/
+argocd/application-progressive.yaml
+argocd/application.yaml
+argocd/git-server.yaml
+base/
+base/configmap.yaml
+base/deployment.yaml
+base/kustomization.yaml
+base/namespace.yaml
+base/service.yaml
+overlays/
+overlays/dev/
+overlays/prod/
+rollout/
+rollout/analysis-template.yaml
+rollout/configmap.yaml
+rollout/configmap.yaml.bak
+rollout/kustomization.yaml
+rollout/namespace.yaml
+rollout/rollout.yaml
+rollout/services.yaml
+services/
+services/service.yaml
+
+sent 11233 bytes  received 420 bytes  889541 bytes/sec
+total size is 9345  speedup is 0.80
+[main df9e4eb] test(gitops): verify automated reconciliation verif-1791403095
+ 2 files changed, 12 insertions(+)
+ create mode 100644 gitops/rollout/configmap.yaml.bak
+To git://127.0.0.1:19418/cloud05-gitops.git
+   63740d1..df9e4eb  main -> main
+Successfully pushed commit: df9e4eb0aad6d03ab47faad059d85fd3dc76aa0a
+Notifying Argo CD to reconcile application cloud05-app...
+Waiting for Argo CD to reconcile desired state...
+Argo CD confirmed synchronized at revision df9e4eb0aad6d03ab47faad059d85fd3dc76aa0a!
+
+==========================================================
+  GITOPS DEPLOYMENT VERIFICATION RECORD                    
+  Repository URL: git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git                              
+  Branch:         main                                     
+  Commit SHA:     df9e4eb0aad6d03ab47faad059d85fd3dc76aa0a                            
+  Argo CD Sync:   Synced                           
+  Argo CD Health: Degraded                         
+==========================================================
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/scripts/sync-gitops.sh: line 28: 51672 Terminated: 15          kubectl port-forward -n cloud05 svc/local-git-server "${PORT}:9418" > /dev/null 2>&1  (wd: ~/Desktop/capstone1)
+[PASS] Pushed Git commit: df9e4eb0aad6d03ab47faad059d85fd3dc76aa0a
+[PASS] Argo CD reconciled desired Git SHA: df9e4eb0aad6d03ab47faad059d85fd3dc76aa0a
+[PASS] Kubernetes observed state reconciled via Argo CD: VERIFICATION_PROBE=verif-1791403095
+Reverting test change in Git...
+==========================================================
+  GITOPS DESIRED-STATE SYNCHRONIZATION                    
+==========================================================
+Commit message: revert(gitops): restore clean state following verification
+deployment "local-git-server" successfully rolled out
+Connecting to in-cluster Git server...
+Cloning into '/var/folders/00/_yqm0h3n1z9fdpdcxq3gg2vh0000gn/T/tmp.epjmjMyui8'...
+Transfer starting: 23 files
+deleting rollout/configmap.yaml.bak
+./
+argocd/
+argocd/application-progressive.yaml
+argocd/application.yaml
+argocd/git-server.yaml
+base/
+base/configmap.yaml
+base/deployment.yaml
+base/kustomization.yaml
+base/namespace.yaml
+base/service.yaml
+overlays/
+overlays/dev/
+overlays/prod/
+rollout/
+rollout/analysis-template.yaml
+rollout/configmap.yaml
+rollout/kustomization.yaml
+rollout/namespace.yaml
+rollout/rollout.yaml
+rollout/services.yaml
+services/
+services/service.yaml
+
+sent 10887 bytes  received 398 bytes  932644 bytes/sec
+total size is 9096  speedup is 0.81
+[main 3d684c8] revert(gitops): restore clean state following verification
+ 2 files changed, 12 deletions(-)
+ delete mode 100644 gitops/rollout/configmap.yaml.bak
+To git://127.0.0.1:19418/cloud05-gitops.git
+   df9e4eb..3d684c8  main -> main
+Successfully pushed commit: 3d684c8db3e0d15ba0e29752c5bd51af582a8462
+Notifying Argo CD to reconcile application cloud05-app...
+Waiting for Argo CD to reconcile desired state...
+Argo CD confirmed synchronized at revision 3d684c8db3e0d15ba0e29752c5bd51af582a8462!
+
+==========================================================
+  GITOPS DEPLOYMENT VERIFICATION RECORD                    
+  Repository URL: git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git                              
+  Branch:         main                                     
+  Commit SHA:     3d684c8db3e0d15ba0e29752c5bd51af582a8462                            
+  Argo CD Sync:   Synced                           
+  Argo CD Health: Degraded                         
+==========================================================
+/Users/vinayakkumar/Desktop/capstone1/cloud05-release-safety/scripts/sync-gitops.sh: line 28: 51747 Terminated: 15          kubectl port-forward -n cloud05 svc/local-git-server "${PORT}:9418" > /dev/null 2>&1  (wd: ~/Desktop/capstone1)
+[PASS] GitOps cleanly restored original configuration without probe
+

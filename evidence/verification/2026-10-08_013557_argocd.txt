@@ -1,0 +1,242 @@
+=== ARGO CD VERIFICATION ===
+Timestamp: 2026-10-07T20:05:57Z
+[PASS] Namespace argocd exists
+[PASS] Argo CD components healthy (7 running pods)
+NAME                                                READY   STATUS    RESTARTS       AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+argocd-application-controller-0                     1/1     Running   2 (127m ago)   2d    10.244.0.15   cloud05-control-plane   <none>           <none>
+argocd-applicationset-controller-84549767db-7vr29   1/1     Running   2 (127m ago)   2d    10.244.0.11   cloud05-control-plane   <none>           <none>
+argocd-dex-server-6cc5dd7c9d-vt625                  1/1     Running   2 (127m ago)   2d    10.244.0.2    cloud05-control-plane   <none>           <none>
+argocd-notifications-controller-57d4c66f69-mddgt    1/1     Running   2 (127m ago)   2d    10.244.0.4    cloud05-control-plane   <none>           <none>
+argocd-redis-c55679569-c28v8                        1/1     Running   2 (127m ago)   2d    10.244.0.3    cloud05-control-plane   <none>           <none>
+argocd-repo-server-7f9fdfbb74-fd6sc                 1/1     Running   5 (127m ago)   2d    10.244.0.19   cloud05-control-plane   <none>           <none>
+argocd-server-69f5c85cb4-rgp2p                      1/1     Running   3 (127m ago)   2d    10.244.0.9    cloud05-control-plane   <none>           <none>
+[PASS] Argo CD Application cloud05-app exists
+[PASS] Configured Repo URL: git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
+[PASS] Target path: gitops/rollout
+[PASS] Sync status: Synced at revision 3d684c8db3e0d15ba0e29752c5bd51af582a8462
+[PASS] Health status: Degraded (Safe containment state following canary rollback)
+
+=== APPLICATION DESCRIBE DUMP ===
+Name:         cloud05-app
+Namespace:    argocd
+Labels:       <none>
+Annotations:  <none>
+API Version:  argoproj.io/v1alpha1
+Kind:         Application
+Metadata:
+  Creation Timestamp:  2026-10-05T19:10:51Z
+  Finalizers:
+    resources-finalizer.argocd.argoproj.io
+  Generation:        326
+  Resource Version:  50227
+  UID:               e8de69e6-5e2a-4e25-a360-4527ab84dfcd
+Spec:
+  Destination:
+    Namespace:  cloud05
+    Server:     https://kubernetes.default.svc
+  Project:      default
+  Source:
+    Path:             gitops/rollout
+    Repo URL:         git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
+    Target Revision:  main
+  Sync Policy:
+    Automated:
+      Prune:      true
+      Self Heal:  true
+    Sync Options:
+      CreateNamespace=true
+      ApplyOutOfSyncOnly=true
+Status:
+  Controller Namespace:  argocd
+  Health:
+    Last Transition Time:  2026-10-07T18:16:42Z
+    Status:                Degraded
+  History:
+    Deploy Started At:  2026-10-05T19:10:53Z
+    Deployed At:        2026-10-05T19:10:53Z
+    Id:                 0
+    Initiated By:
+      Automated:  true
+    Revision:     500cf64cc663bba833b8f246d758d17e12cbaa2b
+    Source:
+      Path:             gitops/base
+      Repo URL:         git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
+      Target Revision:  main
+    Deploy Started At:  2026-10-06T08:20:33Z
+    Deployed At:        2026-10-06T08:20:35Z
+    Id:                 1
+    Initiated By:
+      Automated:  true
+    Revision:     5e52532d5429529afb8653623ddf492ccc05f9cb
+    Source:
+      Path:             gitops/rollout
+      Repo URL:         git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
+      Target Revision:  main
+    Deploy Started At:  2026-10-06T08:24:40Z
+    Deployed At:        2026-10-06T08:24:42Z
+    Id:                 2
+    Initiated By:
+      Automated:  true
+    Revision:     1d62398f8bbe90790fbd31f1d4dc40dbc9bff399
+    Source:
+      Path:             gitops/rollout
+      Repo URL:         git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
+      Target Revision:  main
+    Deploy Started At:  2026-10-06T09:02:36Z
+    Deployed At:        2026-10-06T09:02:37Z
+    Id:                 3
+    Initiated By:
+      Automated:  true
+    Revision:     b9ba33f2b28f98b8fa4909b791d1f1ef6021b4b3
+    Source:
+      Path:             gitops/rollout
+      Repo URL:         git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
+      Target Revision:  main
+    Deploy Started At:  2026-10-07T18:11:05Z
+    Deployed At:        2026-10-07T18:11:07Z
+    Id:                 4
+    Initiated By:
+      Automated:  true
+    Revision:     5637d619348c6daa8062fe327fb9e5cfdcce3829
+    Source:
+      Path:             gitops/rollout
+      Repo URL:         git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
+      Target Revision:  main
+    Deploy Started At:  2026-10-07T18:14:41Z
+    Deployed At:        2026-10-07T18:14:43Z
+    Id:                 5
+    Initiated By:
+      Automated:  true
+    Revision:     04158bdc505eecfc3fbb049d53f92ff5227df241
+    Source:
+      Path:             gitops/rollout
+      Repo URL:         git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
+      Target Revision:  main
+    Deploy Started At:  2026-10-07T18:15:44Z
+    Deployed At:        2026-10-07T18:15:45Z
+    Id:                 6
+    Initiated By:
+      Automated:  true
+    Revision:     63740d1f8300d7471d1704457456b7151a6fc60f
+    Source:
+      Path:             gitops/rollout
+      Repo URL:         git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
+      Target Revision:  main
+    Deploy Started At:  2026-10-07T19:58:17Z
+    Deployed At:        2026-10-07T19:58:17Z
+    Id:                 7
+    Initiated By:
+      Automated:  true
+    Revision:     df9e4eb0aad6d03ab47faad059d85fd3dc76aa0a
+    Source:
+      Path:             gitops/rollout
+      Repo URL:         git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
+      Target Revision:  main
+    Deploy Started At:  2026-10-07T19:58:19Z
+    Deployed At:        2026-10-07T19:58:20Z
+    Id:                 8
+    Initiated By:
+      Automated:  true
+    Revision:     3d684c8db3e0d15ba0e29752c5bd51af582a8462
+    Source:
+      Path:             gitops/rollout
+      Repo URL:         git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
+      Target Revision:  main
+  Operation State:
+    Finished At:  2026-10-07T19:58:20Z
+    Message:      successfully synced (all tasks run)
+    Operation:
+      Initiated By:
+        Automated:  true
+      Retry:
+        Limit:  5
+      Sync:
+        Prune:     true
+        Revision:  3d684c8db3e0d15ba0e29752c5bd51af582a8462
+        Source:
+          Path:             gitops/rollout
+          Repo URL:         git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
+          Target Revision:  main
+        Sync Options:
+          CreateNamespace=true
+          ApplyOutOfSyncOnly=true
+    Phase:       Succeeded
+    Started At:  2026-10-07T19:58:19Z
+    Sync Result:
+      Resources:
+        Group:       
+        Hook Phase:  Running
+        Kind:        ConfigMap
+        Message:     configmap/cloud05-config configured
+        Name:        cloud05-config
+        Namespace:   cloud05
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+      Revision:      3d684c8db3e0d15ba0e29752c5bd51af582a8462
+      Source:
+        Path:              gitops/rollout
+        Repo URL:          git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
+        Target Revision:   main
+  Reconciled At:           2026-10-07T20:05:41Z
+  Resource Health Source:  appTree
+  Resources:
+    Kind:       ConfigMap
+    Name:       cloud05-config
+    Namespace:  cloud05
+    Status:     Synced
+    Version:    v1
+    Kind:       Namespace
+    Name:       cloud05
+    Status:     Synced
+    Version:    v1
+    Kind:       Service
+    Name:       cloud05-canary-service
+    Namespace:  cloud05
+    Status:     Synced
+    Version:    v1
+    Kind:       Service
+    Name:       cloud05-service
+    Namespace:  cloud05
+    Status:     Synced
+    Version:    v1
+    Group:      argoproj.io
+    Kind:       AnalysisTemplate
+    Name:       success-rate-analysis
+    Namespace:  cloud05
+    Status:     Synced
+    Version:    v1alpha1
+    Group:      argoproj.io
+    Kind:       Rollout
+    Name:       cloud05-rollout
+    Namespace:  cloud05
+    Status:     Synced
+    Version:    v1alpha1
+  Source Hydrator:
+  Source Type:  Kustomize
+  Summary:
+    Images:
+      cloud05-demo:3.0.0
+  Sync:
+    Compared To:
+      Destination:
+        Namespace:  cloud05
+        Server:     https://kubernetes.default.svc
+      Source:
+        Path:             gitops/rollout
+        Repo URL:         git://local-git-server.cloud05.svc.cluster.local:9418/cloud05-gitops.git
+        Target Revision:  main
+    Revision:             3d684c8db3e0d15ba0e29752c5bd51af582a8462
+    Status:               Synced
+Events:
+  Type    Reason              Age    From                           Message
+  ----    ------              ----   ----                           -------
+  Normal  OperationStarted    7m41s  argocd-application-controller  Initiated automated sync to 'df9e4eb0aad6d03ab47faad059d85fd3dc76aa0a'
+  Normal  ResourceUpdated     7m41s  argocd-application-controller  Updated sync status: Synced -> OutOfSync
+  Normal  OperationCompleted  7m41s  argocd-application-controller  Sync operation to df9e4eb0aad6d03ab47faad059d85fd3dc76aa0a succeeded
+  Normal  ResourceUpdated     7m41s  argocd-application-controller  Updated sync status: OutOfSync -> Synced
+  Normal  OperationStarted    7m39s  argocd-application-controller  Initiated automated sync to '3d684c8db3e0d15ba0e29752c5bd51af582a8462'
+  Normal  ResourceUpdated     7m39s  argocd-application-controller  Updated sync status: Synced -> OutOfSync
+  Normal  OperationCompleted  7m38s  argocd-application-controller  Sync operation to 3d684c8db3e0d15ba0e29752c5bd51af582a8462 succeeded
+  Normal  ResourceUpdated     7m38s  argocd-application-controller  Updated sync status: OutOfSync -> Synced
+

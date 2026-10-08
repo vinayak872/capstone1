@@ -1,0 +1,97 @@
+=== CI/CD WORKFLOW VERIFICATION ===
+Timestamp: 2026-10-07T20:05:54Z
+[PASS] Workflow file found: /Users/vinayakkumar/Desktop/capstone1/.github/workflows/ci.yml
+Lines: 112
+[PASS] CI stage confirmed in YAML: checkout
+[PASS] CI stage confirmed in YAML: npm ci
+[PASS] CI stage confirmed in YAML: npm run lint
+[PASS] CI stage confirmed in YAML: npm test
+[PASS] CI stage confirmed in YAML: npm audit
+[PASS] CI stage confirmed in YAML: docker/build-push-action
+[PASS] CI stage confirmed in YAML: trivy-action
+
+=== RUNNING LOCAL UNIT/INTEGRATION TESTS ===
+[PASS] Local tests passed: 1 passed
+
+> cloud05-demo-service@1.0.0 test
+> jest --runInBand --detectOpenHandles
+
+  console.log
+    {"timestamp":"2026-10-07T20:05:55.810Z","level":"INFO","app":"cloud05-demo-service","version":"1.0.0","method":"GET","path":"/","statusCode":200,"durationMs":7,"failureMode":"none","hostname":"Vinayaks-MacBook-Air.local"}
+
+      at ServerResponse.log (src/app.js:50:15)
+
+  console.log
+    {"timestamp":"2026-10-07T20:05:55.870Z","level":"INFO","app":"cloud05-demo-service","version":"1.0.0","method":"GET","path":"/version","statusCode":200,"durationMs":2,"failureMode":"none","hostname":"Vinayaks-MacBook-Air.local"}
+
+      at ServerResponse.log (src/app.js:50:15)
+
+  console.log
+    {"timestamp":"2026-10-07T20:05:55.882Z","level":"INFO","app":"cloud05-demo-service","version":"1.0.0","method":"GET","path":"/api/status","statusCode":200,"durationMs":1,"failureMode":"none","hostname":"Vinayaks-MacBook-Air.local"}
+
+      at ServerResponse.log (src/app.js:50:15)
+
+  console.log
+    {"timestamp":"2026-10-07T20:05:55.890Z","level":"INFO","app":"cloud05-demo-service","version":"1.0.0","method":"GET","path":"/api/metrics-test","statusCode":200,"durationMs":1,"failureMode":"none","hostname":"Vinayaks-MacBook-Air.local"}
+
+      at ServerResponse.log (src/app.js:50:15)
+
+  console.log
+    {"timestamp":"2026-10-07T20:05:55.912Z","level":"ERROR","app":"cloud05-demo-service","version":"1.0.0","method":"GET","path":"/","statusCode":500,"durationMs":1,"failureMode":"error","hostname":"Vinayaks-MacBook-Air.local"}
+
+      at ServerResponse.log (src/app.js:50:15)
+
+  console.log
+    {"timestamp":"2026-10-07T20:05:56.000Z","level":"INFO","app":"cloud05-demo-service","version":"1.0.0","method":"GET","path":"/api/metrics-test","statusCode":200,"durationMs":83,"failureMode":"latency","hostname":"Vinayaks-MacBook-Air.local"}
+
+      at ServerResponse.log (src/app.js:50:15)
+
+  console.log
+    {"timestamp":"2026-10-07T20:05:56.016Z","level":"INFO","app":"cloud05-demo-service","version":"1.0.0","method":"POST","path":"/api/admin/failure","statusCode":200,"durationMs":1,"failureMode":"error","hostname":"Vinayaks-MacBook-Air.local"}
+
+      at ServerResponse.log (src/app.js:50:15)
+
+  console.log
+    {"timestamp":"2026-10-07T20:05:56.021Z","level":"ERROR","app":"cloud05-demo-service","version":"1.0.0","method":"GET","path":"/api/status","statusCode":500,"durationMs":1,"failureMode":"error","hostname":"Vinayaks-MacBook-Air.local"}
+
+      at ServerResponse.log (src/app.js:50:15)
+
+  console.log
+    {"timestamp":"2026-10-07T20:05:56.027Z","level":"INFO","app":"cloud05-demo-service","version":"1.0.0","method":"GET","path":"/non-existent-endpoint","statusCode":404,"durationMs":1,"failureMode":"none","hostname":"Vinayaks-MacBook-Air.local"}
+
+      at ServerResponse.log (src/app.js:50:15)
+
+PASS test/app.test.js
+  Cloud05 Demo Service Integration Tests
+    GET / - Root endpoint
+      ✓ should return 200 with service metadata in healthy mode (60 ms)
+    GET /health - Liveness probe
+      ✓ should return 200 OK when service is alive (10 ms)
+      ✓ should return 503 Service Unavailable when alive is false (6 ms)
+    GET /ready - Readiness probe
+      ✓ should return 200 OK when service is ready (5 ms)
+      ✓ should return 503 when service is unready (6 ms)
+      ✓ should return 503 when failureMode is unready (6 ms)
+    GET /version - Release identification
+      ✓ should return current application version (8 ms)
+    GET /api/status - Operational status
+      ✓ should expose runtime metrics and configuration (12 ms)
+    GET /metrics - Prometheus metrics
+      ✓ should export Prometheus format metrics including custom counters (18 ms)
+    Failure Injection Scenarios
+      ✓ should return 500 when failureMode is error (11 ms)
+      ✓ should introduce latency when failureMode is latency (88 ms)
+      ✓ should support dynamic runtime failure reconfiguration via /api/admin/failure (21 ms)
+    Error Handling
+      ✓ should return 404 for undefined routes (6 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       13 passed, 13 total
+Snapshots:   0 total
+Time:        0.648 s, estimated 1 s
+Ran all test suites.
+
+=== RUNNING LOCAL LINTER ===
+[PASS] Linter clean
+[NOT TESTED] GitHub Actions live run status requires GITHUB_TOKEN environment variable
+

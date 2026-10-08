@@ -1,0 +1,39 @@
+=== APPLICATION ENDPOINTS VERIFICATION ===
+Timestamp: 2026-10-07T20:05:50Z
+[PASS] Application reachable at http://localhost:8080
+[PASS] GET / returned HTTP 200
+Body: {"application":"cloud05-demo-service","version":"3.0.0","environment":"demo","status":"healthy","timestamp":"2026-10-07T20:05:50.501Z","hostname":"cloud05-rollout-59856cc485-gcq5r","message":"Release version 3.0.0 active."}
+[PASS] GET /health returned HTTP 200
+Body: {"status":"healthy","alive":true,"version":"3.0.0","timestamp":"2026-10-07T20:05:50.519Z","hostname":"cloud05-rollout-59856cc485-vzq9t"}
+[PASS] GET /ready returned HTTP 200
+Body: {"status":"ready","ready":true,"version":"3.0.0","timestamp":"2026-10-07T20:05:50.535Z","hostname":"cloud05-rollout-59856cc485-69qzw"}
+[PASS] GET /version returned HTTP 200 with version: 3.0.0
+Body: {"application":"cloud05-demo-service","version":"3.0.0","environment":"demo","failureMode":"none","hostname":"cloud05-rollout-59856cc485-mk6wd","timestamp":"2026-10-07T20:05:50.552Z"}
+[PASS] GET /metrics returned HTTP 200 with valid Prometheus metrics (176 series)
+Metrics Sample:
+# HELP cloud05_process_cpu_user_seconds_total Total user CPU time spent in seconds.
+# TYPE cloud05_process_cpu_user_seconds_total counter
+cloud05_process_cpu_user_seconds_total{version="3.0.0",app="cloud05-demo-service"} 23.073514000000024
+
+# HELP cloud05_process_cpu_system_seconds_total Total system CPU time spent in seconds.
+# TYPE cloud05_process_cpu_system_seconds_total counter
+cloud05_process_cpu_system_seconds_total{version="3.0.0",app="cloud05-demo-service"} 7.395010000000006
+
+# HELP cloud05_process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE cloud05_process_cpu_seconds_total counter
+cloud05_process_cpu_seconds_total{version="3.0.0",app="cloud05-demo-service"} 30.46852400000004
+
+# HELP cloud05_process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE cloud05_process_start_time_seconds gauge
+cloud05_process_start_time_seconds{version="3.0.0",app="cloud05-demo-service"} 1791396899
+
+# HELP cloud05_process_resident_memory_bytes Resident memory size in bytes.
+# TYPE cloud05_process_resident_memory_bytes gauge
+cloud05_process_resident_memory_bytes{version="3.0.0",app="cloud05-demo-service"} 39763968
+
+# HELP cloud05_process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE cloud05_process_virtual_memory_bytes gauge
+cloud05_process_virtual_memory_bytes{version="3.0.0",app="cloud05-demo-service"} 425660416
+
+# HELP cloud05_process_heap_bytes Process heap size in bytes.
+
